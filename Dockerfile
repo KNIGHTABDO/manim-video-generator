@@ -50,23 +50,35 @@ WORKDIR /app
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Install Python dependencies
+# Install Python dependencies (as root to avoid permission issues)
 COPY requirements-full.txt .
+RUN pip install --no-cache-dir --upgrade pip
+
+# Install packages that need system dependencies first
+RUN pip install --no-cache-dir numpy>=1.24.0
+RUN pip install --no-cache-dir pycairo>=1.25.0
+RUN pip install --no-cache-dir Pillow>=10.0.0
+RUN pip install --no-cache-dir scipy>=1.10.0
+
+# Install the rest
 RUN pip install --no-cache-dir -r requirements-full.txt
 
 # Create necessary directories with correct permissions
 RUN mkdir -p /app/media/videos/scene/1080p30 \
+    && mkdir -p /app/media/videos/scene/720p30 \
     && mkdir -p /app/tmp \
     && chown -R appuser:appuser /app/media \
     && chown -R appuser:appuser /app/tmp \
+    && chown -R appuser:appuser /opt/venv \
     && chmod -R 755 /app/media \
     && chmod -R 755 /app/tmp
 
+# Copy application files (as root first)
+COPY . .
+RUN chown -R appuser:appuser /app
+
 # Switch to non-root user
 USER appuser
-
-# Copy application files
-COPY --chown=appuser:appuser . .
 
 # Expose port
 EXPOSE ${PORT:-5001}

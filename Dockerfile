@@ -88,4 +88,4 @@ ENV MEDIA_DIR=/app/media
 ENV TEMP_DIR=/app/tmp
 
 # Start Xvfb and Gunicorn
-CMD ["sh", "-c", "Xvfb :99 -screen 0 1280x720x24 -ac +extension GLX +render -noreset & gunicorn --bind 0.0.0.0:${PORT:-5001} --timeout 300 app:app"]
+CMD ["sh", "-c", "DISPLAY_NUM=$(shuf -i 100-999 -n 1) && Xvfb :$DISPLAY_NUM -screen 0 1280x720x24 -ac +extension GLX +render -noreset & export DISPLAY=:$DISPLAY_NUM && gunicorn --bind 0.0.0.0:${PORT:-5001} --timeout 300 app:app"]

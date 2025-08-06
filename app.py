@@ -2053,11 +2053,11 @@ def generate_manim_code(concept):
             print(f"DEBUG: Generation attempt {attempt + 1}/3")
             
             response = genai_client.models.generate_content(
-                model='gemini-2.5-flash-lite',  # Use 1.5-flash which doesn't have thinking mode
+                model='gemini-2.5-flash-lite',
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     temperature=0.4 + (attempt * 0.1),
-                    max_output_tokens=8192,  # Increase token limit
+                    max_output_tokens=8192,
                 )
             )
         
@@ -2170,7 +2170,7 @@ def generate_manim_code(concept):
                 contents=enhanced_prompt,
                 config=types.GenerateContentConfig(
                     temperature=0.5,
-                    max_output_tokens=8192,  # Increased for enhanced generation
+                    max_output_tokens=8192,
                 )
             )
             

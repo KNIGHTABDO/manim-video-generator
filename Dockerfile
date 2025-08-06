@@ -54,13 +54,13 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY requirements-full.txt .
 RUN pip install --no-cache-dir --upgrade pip
 
-# Install packages that need system dependencies first
+# Install packages step by step to avoid conflicts
 RUN pip install --no-cache-dir numpy>=1.24.0
+RUN pip install --no-cache-dir "Pillow>=9.1,<10.0"
 RUN pip install --no-cache-dir pycairo>=1.25.0
-RUN pip install --no-cache-dir Pillow>=10.0.0
 RUN pip install --no-cache-dir scipy>=1.10.0
 
-# Install the rest
+# Install manim and remaining packages
 RUN pip install --no-cache-dir -r requirements-full.txt
 
 # Create necessary directories with correct permissions

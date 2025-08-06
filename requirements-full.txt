@@ -7,7 +7,7 @@ requests==2.31.0
 gunicorn==21.2.0
 numpy>=1.24.0
 scipy>=1.10.0
-Pillow>=10.0.0
+Pillow>=9.1,<10.0
 pycairo>=1.25.0
 ffmpeg-python>=0.2.0
 moderngl>=5.8.0

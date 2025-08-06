@@ -2671,8 +2671,12 @@ def generate():
         
         # Run manim command with error handling
         output_file = os.path.join(app.static_folder, 'videos', f'{filename}.mp4')
+        
+        # Use appropriate Python command based on platform
+        python_cmd = 'py' if os.name == 'nt' else 'python3'
+        
         command = [
-            'py', '-m', 'manim',
+            python_cmd, '-m', 'manim',
             'render',
             '-qm',  # medium quality
             '--format', 'mp4',
@@ -2756,7 +2760,9 @@ def update_docs():
         script_path = os.path.join(app.root_path, 'scrape_manim_docs.py')
         
         if os.path.exists(script_path):
-            result = subprocess.run(['py', script_path], 
+            # Use appropriate Python command based on platform
+            python_cmd = 'py' if os.name == 'nt' else 'python3'
+            result = subprocess.run([python_cmd, script_path], 
                                   capture_output=True, text=True, cwd=app.root_path)
             
             if result.returncode == 0:

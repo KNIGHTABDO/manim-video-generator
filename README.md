@@ -2,7 +2,7 @@
 
 A web-based tool for generating mathematical animations using Manim, Flask, and AI. Create beautiful mathematical visualizations with simple text prompts and chat with an AI assistant about mathematics.
 
-[![manim video generator](https://img.youtube.com/vi/rIltjjzxsGQ/0.jpg)](https://www.youtube.com/watch?v=rIltjjzxsGQ)
+
 
 ## 🌟 Features
 

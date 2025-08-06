@@ -1,0 +1,6452 @@
+
+MANIM COMMUNITY DOCUMENTATION REFERENCE
+=======================================
+Generated on: 2025-08-06 10:30:35
+Source: Multiple Manim Community Documentation Pages
+
+This file contains comprehensive Manim documentation for AI reference when generating video scripts.
+
+IMPORTANT NOTES FOR AI USAGE:
+- Use only the classes, methods, and patterns shown in this documentation
+- Stick to the color constants and animation methods documented here
+- Follow the examples and patterns shown for proper Manim code structure
+- Pay attention to the changelog for version-specific features
+
+=======================================
+
+
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/examples.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+Example Gallery¶
+This gallery contains a collection of best practice code snippets
+together with their corresponding video/image output, illustrating
+different functionalities all across the library.
+These are all under the MIT license, so feel free to copy & paste them to your projects.
+Enjoy this taste of Manim!
+Tip
+This gallery is not the only place in our documentation where you can see explicit
+code and video examples: there are many more in our
+reference manual – see, for example, our documentation for
+the modules tex_mobject, geometry, moving_camera_scene,
+and many more.
+Check out our interactive Jupyter environment
+which allows running the examples online, without requiring a local
+installation.
+Also, visit our Twitter for more
+manimations!
+Basic Concepts¶
+Example: ManimCELogo ¶
+from manim import *
+class ManimCELogo(Scene):
+def construct(self):
+self.camera.background_color = "#ece6e2"
+logo_green = "#87c2a5"
+logo_blue = "#525893"
+logo_red = "#e07a5f"
+logo_black = "#343434"
+ds_m = MathTex(r"\mathbb{M}", fill_color=logo_black).scale(7)
+ds_m.shift(2.25 * LEFT + 1.5 * UP)
+circle = Circle(color=logo_green, fill_opacity=1).shift(LEFT)
+square = Square(color=logo_blue, fill_opacity=1).shift(UP)
+triangle = Triangle(color=logo_red, fill_opacity=1).shift(RIGHT)
+logo = VGroup(triangle, square, circle, ds_m)  # order matters
+logo.move_to(ORIGIN)
+self.add(logo)
+class ManimCELogo(Scene):
+def construct(self):
+self.camera.background_color = "#ece6e2"
+logo_green = "#87c2a5"
+logo_blue = "#525893"
+logo_red = "#e07a5f"
+logo_black = "#343434"
+ds_m = MathTex(r"\mathbb{M}", fill_color=logo_black).scale(7)
+ds_m.shift(2.25 * LEFT + 1.5 * UP)
+circle = Circle(color=logo_green, fill_opacity=1).shift(LEFT)
+square = Square(color=logo_blue, fill_opacity=1).shift(UP)
+triangle = Triangle(color=logo_red, fill_opacity=1).shift(RIGHT)
+logo = VGroup(triangle, square, circle, ds_m)  # order matters
+logo.move_to(ORIGIN)
+self.add(logo)
+References: MathTex Circle Square Triangle
+Example: BraceAnnotation ¶
+from manim import *
+class BraceAnnotation(Scene):
+def construct(self):
+dot = Dot([-2, -1, 0])
+dot2 = Dot([2, 1, 0])
+line = Line(dot.get_center(), dot2.get_center()).set_color(ORANGE)
+b1 = Brace(line)
+b1text = b1.get_text("Horizontal distance")
+b2 = Brace(line, direction=line.copy().rotate(PI / 2).get_unit_vector())
+b2text = b2.get_tex("x-x_1")
+self.add(line, dot, dot2, b1, b2, b1text, b2text)
+class BraceAnnotation(Scene):
+def construct(self):
+dot = Dot([-2, -1, 0])
+dot2 = Dot([2, 1, 0])
+line = Line(dot.get_center(), dot2.get_center()).set_color(ORANGE)
+b1 = Brace(line)
+b1text = b1.get_text("Horizontal distance")
+b2 = Brace(line, direction=line.copy().rotate(PI / 2).get_unit_vector())
+b2text = b2.get_tex("x-x_1")
+self.add(line, dot, dot2, b1, b2, b1text, b2text)
+References: Brace get_text() get_tex()
+Example: VectorArrow ¶
+from manim import *
+class VectorArrow(Scene):
+def construct(self):
+dot = Dot(ORIGIN)
+arrow = Arrow(ORIGIN, [2, 2, 0], buff=0)
+numberplane = NumberPlane()
+origin_text = Text('(0, 0)').next_to(dot, DOWN)
+tip_text = Text('(2, 2)').next_to(arrow.get_end(), RIGHT)
+self.add(numberplane, dot, arrow, origin_text, tip_text)
+class VectorArrow(Scene):
+def construct(self):
+dot = Dot(ORIGIN)
+arrow = Arrow(ORIGIN, [2, 2, 0], buff=0)
+numberplane = NumberPlane()
+origin_text = Text('(0, 0)').next_to(dot, DOWN)
+tip_text = Text('(2, 2)').next_to(arrow.get_end(), RIGHT)
+self.add(numberplane, dot, arrow, origin_text, tip_text)
+References: Dot Arrow NumberPlane Text
+Example: GradientImageFromArray ¶
+from manim import *
+class GradientImageFromArray(Scene):
+def construct(self):
+n = 256
+imageArray = np.uint8(
+[[i * 256 / n for i in range(0, n)] for _ in range(0, n)]
+)
+image = ImageMobject(imageArray).scale(2)
+image.background_rectangle = SurroundingRectangle(image, color=GREEN)
+self.add(image, image.background_rectangle)
+class GradientImageFromArray(Scene):
+def construct(self):
+n = 256
+imageArray = np.uint8(
+[[i * 256 / n for i in range(0, n)] for _ in range(0, n)]
+)
+image = ImageMobject(imageArray).scale(2)
+image.background_rectangle = SurroundingRectangle(image, color=GREEN)
+self.add(image, image.background_rectangle)
+References: ImageMobject
+Example: BooleanOperations ¶
+from manim import *
+class BooleanOperations(Scene):
+def construct(self):
+ellipse1 = Ellipse(
+width=4.0, height=5.0, fill_opacity=0.5, color=BLUE, stroke_width=10
+).move_to(LEFT)
+ellipse2 = ellipse1.copy().set_color(color=RED).move_to(RIGHT)
+bool_ops_text = MarkupText("<u>Boolean Operation</u>").next_to(ellipse1, UP * 3)
+ellipse_group = Group(bool_ops_text, ellipse1, ellipse2).move_to(LEFT * 3)
+self.play(FadeIn(ellipse_group))
+i = Intersection(ellipse1, ellipse2, color=GREEN, fill_opacity=0.5)
+self.play(i.animate.scale(0.25).move_to(RIGHT * 5 + UP * 2.5))
+intersection_text = Text("Intersection", font_size=23).next_to(i, UP)
+self.play(FadeIn(intersection_text))
+u = Union(ellipse1, ellipse2, color=ORANGE, fill_opacity=0.5)
+union_text = Text("Union", font_size=23)
+self.play(u.animate.scale(0.3).next_to(i, DOWN, buff=union_text.height * 3))
+union_text.next_to(u, UP)
+self.play(FadeIn(union_text))
+e = Exclusion(ellipse1, ellipse2, color=YELLOW, fill_opacity=0.5)
+exclusion_text = Text("Exclusion", font_size=23)
+self.play(e.animate.scale(0.3).next_to(u, DOWN, buff=exclusion_text.height * 3.5))
+exclusion_text.next_to(e, UP)
+self.play(FadeIn(exclusion_text))
+d = Difference(ellipse1, ellipse2, color=PINK, fill_opacity=0.5)
+difference_text = Text("Difference", font_size=23)
+self.play(d.animate.scale(0.3).next_to(u, LEFT, buff=difference_text.height * 3.5))
+difference_text.next_to(d, UP)
+self.play(FadeIn(difference_text))
+class BooleanOperations(Scene):
+def construct(self):
+ellipse1 = Ellipse(
+width=4.0, height=5.0, fill_opacity=0.5, color=BLUE, stroke_width=10
+).move_to(LEFT)
+ellipse2 = ellipse1.copy().set_color(color=RED).move_to(RIGHT)
+bool_ops_text = MarkupText("Boolean Operation").next_to(ellipse1, UP * 3)
+ellipse_group = Group(bool_ops_text, ellipse1, ellipse2).move_to(LEFT * 3)
+self.play(FadeIn(ellipse_group))
+i = Intersection(ellipse1, ellipse2, color=GREEN, fill_opacity=0.5)
+self.play(i.animate.scale(0.25).move_to(RIGHT * 5 + UP * 2.5))
+intersection_text = Text("Intersection", font_size=23).next_to(i, UP)
+self.play(FadeIn(intersection_text))
+u = Union(ellipse1, ellipse2, color=ORANGE, fill_opacity=0.5)
+union_text = Text("Union", font_size=23)
+self.play(u.animate.scale(0.3).next_to(i, DOWN, buff=union_text.height * 3))
+union_text.next_to(u, UP)
+self.play(FadeIn(union_text))
+e = Exclusion(ellipse1, ellipse2, color=YELLOW, fill_opacity=0.5)
+exclusion_text = Text("Exclusion", font_size=23)
+self.play(e.animate.scale(0.3).next_to(u, DOWN, buff=exclusion_text.height * 3.5))
+exclusion_text.next_to(e, UP)
+self.play(FadeIn(exclusion_text))
+d = Difference(ellipse1, ellipse2, color=PINK, fill_opacity=0.5)
+difference_text = Text("Difference", font_size=23)
+self.play(d.animate.scale(0.3).next_to(u, LEFT, buff=difference_text.height * 3.5))
+difference_text.next_to(d, UP)
+self.play(FadeIn(difference_text))
+References: Union Intersection Exclusion Difference
+Animations¶
+Example: PointMovingOnShapes ¶
+from manim import *
+class PointMovingOnShapes(Scene):
+def construct(self):
+circle = Circle(radius=1, color=BLUE)
+dot = Dot()
+dot2 = dot.copy().shift(RIGHT)
+self.add(dot)
+line = Line([3, 0, 0], [5, 0, 0])
+self.add(line)
+self.play(GrowFromCenter(circle))
+self.play(Transform(dot, dot2))
+self.play(MoveAlongPath(dot, circle), run_time=2, rate_func=linear)
+self.play(Rotating(dot, about_point=[2, 0, 0]), run_time=1.5)
+self.wait()
+class PointMovingOnShapes(Scene):
+def construct(self):
+circle = Circle(radius=1, color=BLUE)
+dot = Dot()
+dot2 = dot.copy().shift(RIGHT)
+self.add(dot)
+line = Line([3, 0, 0], [5, 0, 0])
+self.add(line)
+self.play(GrowFromCenter(circle))
+self.play(Transform(dot, dot2))
+self.play(MoveAlongPath(dot, circle), run_time=2, rate_func=linear)
+self.play(Rotating(dot, about_point=[2, 0, 0]), run_time=1.5)
+self.wait()
+References: Circle Dot Line GrowFromCenter Transform MoveAlongPath Rotating
+Example: MovingAround ¶
+from manim import *
+class MovingAround(Scene):
+def construct(self):
+square = Square(color=BLUE, fill_opacity=1)
+self.play(square.animate.shift(LEFT))
+self.play(square.animate.set_fill(ORANGE))
+self.play(square.animate.scale(0.3))
+self.play(square.animate.rotate(0.4))
+class MovingAround(Scene):
+def construct(self):
+square = Square(color=BLUE, fill_opacity=1)
+self.play(square.animate.shift(LEFT))
+self.play(square.animate.set_fill(ORANGE))
+self.play(square.animate.scale(0.3))
+self.play(square.animate.rotate(0.4))
+References: shift() set_fill() scale() rotate()
+Example: MovingAngle ¶
+from manim import *
+class MovingAngle(Scene):
+def construct(self):
+rotation_center = LEFT
+theta_tracker = ValueTracker(110)
+line1 = Line(LEFT, RIGHT)
+line_moving = Line(LEFT, RIGHT)
+line_ref = line_moving.copy()
+line_moving.rotate(
+theta_tracker.get_value() * DEGREES, about_point=rotation_center
+)
+a = Angle(line1, line_moving, radius=0.5, other_angle=False)
+tex = MathTex(r"\theta").move_to(
+Angle(
+line1, line_moving, radius=0.5 + 3 * SMALL_BUFF, other_angle=False
+).point_from_proportion(0.5)
+)
+self.add(line1, line_moving, a, tex)
+self.wait()
+line_moving.add_updater(
+lambda x: x.become(line_ref.copy()).rotate(
+theta_tracker.get_value() * DEGREES, about_point=rotation_center
+)
+)
+a.add_updater(
+lambda x: x.become(Angle(line1, line_moving, radius=0.5, other_angle=False))
+)
+tex.add_updater(
+lambda x: x.move_to(
+Angle(
+line1, line_moving, radius=0.5 + 3 * SMALL_BUFF, other_angle=False
+).point_from_proportion(0.5)
+)
+)
+self.play(theta_tracker.animate.set_value(40))
+self.play(theta_tracker.animate.increment_value(140))
+self.play(tex.animate.set_color(RED), run_time=0.5)
+self.play(theta_tracker.animate.set_value(350))
+class MovingAngle(Scene):
+def construct(self):
+rotation_center = LEFT
+theta_tracker = ValueTracker(110)
+line1 = Line(LEFT, RIGHT)
+line_moving = Line(LEFT, RIGHT)
+line_ref = line_moving.copy()
+line_moving.rotate(
+theta_tracker.get_value() * DEGREES, about_point=rotation_center
+)
+a = Angle(line1, line_moving, radius=0.5, other_angle=False)
+tex = MathTex(r"\theta").move_to(
+Angle(
+line1, line_moving, radius=0.5 + 3 * SMALL_BUFF, other_angle=False
+).point_from_proportion(0.5)
+)
+self.add(line1, line_moving, a, tex)
+self.wait()
+line_moving.add_updater(
+lambda x: x.become(line_ref.copy()).rotate(
+theta_tracker.get_value() * DEGREES, about_point=rotation_center
+)
+)
+a.add_updater(
+lambda x: x.become(Angle(line1, line_moving, radius=0.5, other_angle=False))
+)
+tex.add_updater(
+lambda x: x.move_to(
+Angle(
+line1, line_moving, radius=0.5 + 3 * SMALL_BUFF, other_angle=False
+).point_from_proportion(0.5)
+)
+)
+self.play(theta_tracker.animate.set_value(40))
+self.play(theta_tracker.animate.increment_value(140))
+self.play(tex.animate.set_color(RED), run_time=0.5)
+self.play(theta_tracker.animate.set_value(350))
+References: Angle rotate()
+Tip
+You can use multiple ValueTrackers simultaneously.
+Example: MovingDots ¶
+from manim import *
+class MovingDots(Scene):
+def construct(self):
+d1,d2=Dot(color=BLUE),Dot(color=GREEN)
+dg=VGroup(d1,d2).arrange(RIGHT,buff=1)
+l1=Line(d1.get_center(),d2.get_center()).set_color(RED)
+x=ValueTracker(0)
+y=ValueTracker(0)
+d1.add_updater(lambda z: z.set_x(x.get_value()))
+d2.add_updater(lambda z: z.set_y(y.get_value()))
+l1.add_updater(lambda z: z.become(Line(d1.get_center(),d2.get_center())))
+self.add(d1,d2,l1)
+self.play(x.animate.set_value(5))
+self.play(y.animate.set_value(4))
+self.wait()
+class MovingDots(Scene):
+def construct(self):
+d1,d2=Dot(color=BLUE),Dot(color=GREEN)
+dg=VGroup(d1,d2).arrange(RIGHT,buff=1)
+l1=Line(d1.get_center(),d2.get_center()).set_color(RED)
+x=ValueTracker(0)
+y=ValueTracker(0)
+d1.add_updater(lambda z: z.set_x(x.get_value()))
+d2.add_updater(lambda z: z.set_y(y.get_value()))
+l1.add_updater(lambda z: z.become(Line(d1.get_center(),d2.get_center())))
+self.add(d1,d2,l1)
+self.play(x.animate.set_value(5))
+self.play(y.animate.set_value(4))
+self.wait()
+Example: MovingGroupToDestination ¶
+from manim import *
+class MovingGroupToDestination(Scene):
+def construct(self):
+group = VGroup(Dot(LEFT), Dot(ORIGIN), Dot(RIGHT, color=RED), Dot(2 * RIGHT)).scale(1.4)
+dest = Dot([4, 3, 0], color=YELLOW)
+self.add(group, dest)
+self.play(group.animate.shift(dest.get_center() - group[2].get_center()))
+self.wait(0.5)
+class MovingGroupToDestination(Scene):
+def construct(self):
+group = VGroup(Dot(LEFT), Dot(ORIGIN), Dot(RIGHT, color=RED), Dot(2 * RIGHT)).scale(1.4)
+dest = Dot([4, 3, 0], color=YELLOW)
+self.add(group, dest)
+self.play(group.animate.shift(dest.get_center() - group[2].get_center()))
+self.wait(0.5)
+Example: MovingFrameBox ¶
+from manim import *
+class MovingFrameBox(Scene):
+def construct(self):
+text=MathTex(
+"\\frac{d}{dx}f(x)g(x)=","f(x)\\frac{d}{dx}g(x)","+",
+"g(x)\\frac{d}{dx}f(x)"
+)
+self.play(Write(text))
+framebox1 = SurroundingRectangle(text[1], buff = .1)
+framebox2 = SurroundingRectangle(text[3], buff = .1)
+self.play(
+Create(framebox1),
+)
+self.wait()
+self.play(
+ReplacementTransform(framebox1,framebox2),
+)
+self.wait()
+class MovingFrameBox(Scene):
+def construct(self):
+text=MathTex(
+"\\frac{d}{dx}f(x)g(x)=","f(x)\\frac{d}{dx}g(x)","+",
+"g(x)\\frac{d}{dx}f(x)"
+)
+self.play(Write(text))
+framebox1 = SurroundingRectangle(text[1], buff = .1)
+framebox2 = SurroundingRectangle(text[3], buff = .1)
+self.play(
+Create(framebox1),
+)
+self.wait()
+self.play(
+ReplacementTransform(framebox1,framebox2),
+)
+self.wait()
+References: tex_mobject MathTex SurroundingRectangle
+Example: RotationUpdater ¶
+from manim import *
+class RotationUpdater(Scene):
+def construct(self):
+def updater_forth(mobj, dt):
+mobj.rotate_about_origin(dt)
+def updater_back(mobj, dt):
+mobj.rotate_about_origin(-dt)
+line_reference = Line(ORIGIN, LEFT).set_color(WHITE)
+line_moving = Line(ORIGIN, LEFT).set_color(YELLOW)
+line_moving.add_updater(updater_forth)
+self.add(line_reference, line_moving)
+self.wait(2)
+line_moving.remove_updater(updater_forth)
+line_moving.add_updater(updater_back)
+self.wait(2)
+line_moving.remove_updater(updater_back)
+self.wait(0.5)
+class RotationUpdater(Scene):
+def construct(self):
+def updater_forth(mobj, dt):
+mobj.rotate_about_origin(dt)
+def updater_back(mobj, dt):
+mobj.rotate_about_origin(-dt)
+line_reference = Line(ORIGIN, LEFT).set_color(WHITE)
+line_moving = Line(ORIGIN, LEFT).set_color(YELLOW)
+line_moving.add_updater(updater_forth)
+self.add(line_reference, line_moving)
+self.wait(2)
+line_moving.remove_updater(updater_forth)
+line_moving.add_updater(updater_back)
+self.wait(2)
+line_moving.remove_updater(updater_back)
+self.wait(0.5)
+References: add_updater() remove_updater()
+Example: PointWithTrace ¶
+from manim import *
+class PointWithTrace(Scene):
+def construct(self):
+path = VMobject()
+dot = Dot()
+path.set_points_as_corners([dot.get_center(), dot.get_center()])
+def update_path(path):
+previous_path = path.copy()
+previous_path.add_points_as_corners([dot.get_center()])
+path.become(previous_path)
+path.add_updater(update_path)
+self.add(path, dot)
+self.play(Rotating(dot, radians=PI, about_point=RIGHT, run_time=2))
+self.wait()
+self.play(dot.animate.shift(UP))
+self.play(dot.animate.shift(LEFT))
+self.wait()
+class PointWithTrace(Scene):
+def construct(self):
+path = VMobject()
+dot = Dot()
+path.set_points_as_corners([dot.get_center(), dot.get_center()])
+def update_path(path):
+previous_path = path.copy()
+previous_path.add_points_as_corners([dot.get_center()])
+path.become(previous_path)
+path.add_updater(update_path)
+self.add(path, dot)
+self.play(Rotating(dot, radians=PI, about_point=RIGHT, run_time=2))
+self.wait()
+self.play(dot.animate.shift(UP))
+self.play(dot.animate.shift(LEFT))
+self.wait()
+References: Rotating set_points_as_corners() add_updater()
+Plotting with Manim¶
+Example: SinAndCosFunctionPlot ¶
+from manim import *
+class SinAndCosFunctionPlot(Scene):
+def construct(self):
+axes = Axes(
+x_range=[-10, 10.3, 1],
+y_range=[-1.5, 1.5, 1],
+x_length=10,
+axis_config={"color": GREEN},
+x_axis_config={
+"numbers_to_include": np.arange(-10, 10.01, 2),
+"numbers_with_elongated_ticks": np.arange(-10, 10.01, 2),
+},
+tips=False,
+)
+axes_labels = axes.get_axis_labels()
+sin_graph = axes.plot(lambda x: np.sin(x), color=BLUE)
+cos_graph = axes.plot(lambda x: np.cos(x), color=RED)
+sin_label = axes.get_graph_label(
+sin_graph, "\\sin(x)", x_val=-10, direction=UP / 2
+)
+cos_label = axes.get_graph_label(cos_graph, label="\\cos(x)")
+vert_line = axes.get_vertical_line(
+axes.i2gp(TAU, cos_graph), color=YELLOW, line_func=Line
+)
+line_label = axes.get_graph_label(
+cos_graph, r"x=2\pi", x_val=TAU, direction=UR, color=WHITE
+)
+plot = VGroup(axes, sin_graph, cos_graph, vert_line)
+labels = VGroup(axes_labels, sin_label, cos_label, line_label)
+self.add(plot, labels)
+class SinAndCosFunctionPlot(Scene):
+def construct(self):
+axes = Axes(
+x_range=[-10, 10.3, 1],
+y_range=[-1.5, 1.5, 1],
+x_length=10,
+axis_config={"color": GREEN},
+x_axis_config={
+"numbers_to_include": np.arange(-10, 10.01, 2),
+"numbers_with_elongated_ticks": np.arange(-10, 10.01, 2),
+},
+tips=False,
+)
+axes_labels = axes.get_axis_labels()
+sin_graph = axes.plot(lambda x: np.sin(x), color=BLUE)
+cos_graph = axes.plot(lambda x: np.cos(x), color=RED)
+sin_label = axes.get_graph_label(
+sin_graph, "\\sin(x)", x_val=-10, direction=UP / 2
+)
+cos_label = axes.get_graph_label(cos_graph, label="\\cos(x)")
+vert_line = axes.get_vertical_line(
+axes.i2gp(TAU, cos_graph), color=YELLOW, line_func=Line
+)
+line_label = axes.get_graph_label(
+cos_graph, r"x=2\pi", x_val=TAU, direction=UR, color=WHITE
+)
+plot = VGroup(axes, sin_graph, cos_graph, vert_line)
+labels = VGroup(axes_labels, sin_label, cos_label, line_label)
+self.add(plot, labels)
+References: coordinate_systems MathTex plot() get_vertical_line_to_graph() input_to_graph_point() get_axis_labels()
+Example: ArgMinExample ¶
+from manim import *
+class ArgMinExample(Scene):
+def construct(self):
+ax = Axes(
+x_range=[0, 10], y_range=[0, 100, 10], axis_config={"include_tip": False}
+)
+labels = ax.get_axis_labels(x_label="x", y_label="f(x)")
+t = ValueTracker(0)
+def func(x):
+return 2 * (x - 5) ** 2
+graph = ax.plot(func, color=MAROON)
+initial_point = [ax.coords_to_point(t.get_value(), func(t.get_value()))]
+dot = Dot(point=initial_point)
+dot.add_updater(lambda x: x.move_to(ax.c2p(t.get_value(), func(t.get_value()))))
+x_space = np.linspace(*ax.x_range[:2],200)
+minimum_index = func(x_space).argmin()
+self.add(ax, labels, graph, dot)
+self.play(t.animate.set_value(x_space[minimum_index]))
+self.wait()
+class ArgMinExample(Scene):
+def construct(self):
+ax = Axes(
+x_range=[0, 10], y_range=[0, 100, 10], axis_config={"include_tip": False}
+)
+labels = ax.get_axis_labels(x_label="x", y_label="f(x)")
+t = ValueTracker(0)
+def func(x):
+return 2 * (x - 5) ** 2
+graph = ax.plot(func, color=MAROON)
+initial_point = [ax.coords_to_point(t.get_value(), func(t.get_value()))]
+dot = Dot(point=initial_point)
+dot.add_updater(lambda x: x.move_to(ax.c2p(t.get_value(), func(t.get_value()))))
+x_space = np.linspace(*ax.x_range[:2],200)
+minimum_index = func(x_space).argmin()
+self.add(ax, labels, graph, dot)
+self.play(t.animate.set_value(x_space[minimum_index]))
+self.wait()
+Example: GraphAreaPlot ¶
+from manim import *
+class GraphAreaPlot(Scene):
+def construct(self):
+ax = Axes(
+x_range=[0, 5],
+y_range=[0, 6],
+x_axis_config={"numbers_to_include": [2, 3]},
+tips=False,
+)
+labels = ax.get_axis_labels()
+curve_1 = ax.plot(lambda x: 4 * x - x ** 2, x_range=[0, 4], color=BLUE_C)
+curve_2 = ax.plot(
+lambda x: 0.8 * x ** 2 - 3 * x + 4,
+x_range=[0, 4],
+color=GREEN_B,
+)
+line_1 = ax.get_vertical_line(ax.input_to_graph_point(2, curve_1), color=YELLOW)
+line_2 = ax.get_vertical_line(ax.i2gp(3, curve_1), color=YELLOW)
+riemann_area = ax.get_riemann_rectangles(curve_1, x_range=[0.3, 0.6], dx=0.03, color=BLUE, fill_opacity=0.5)
+area = ax.get_area(curve_2, [2, 3], bounded_graph=curve_1, color=GREY, opacity=0.5)
+self.add(ax, labels, curve_1, curve_2, line_1, line_2, riemann_area, area)
+class GraphAreaPlot(Scene):
+def construct(self):
+ax = Axes(
+x_range=[0, 5],
+y_range=[0, 6],
+x_axis_config={"numbers_to_include": [2, 3]},
+tips=False,
+)
+labels = ax.get_axis_labels()
+curve_1 = ax.plot(lambda x: 4 * x - x ** 2, x_range=[0, 4], color=BLUE_C)
+curve_2 = ax.plot(
+lambda x: 0.8 * x ** 2 - 3 * x + 4,
+x_range=[0, 4],
+color=GREEN_B,
+)
+line_1 = ax.get_vertical_line(ax.input_to_graph_point(2, curve_1), color=YELLOW)
+line_2 = ax.get_vertical_line(ax.i2gp(3, curve_1), color=YELLOW)
+riemann_area = ax.get_riemann_rectangles(curve_1, x_range=[0.3, 0.6], dx=0.03, color=BLUE, fill_opacity=0.5)
+area = ax.get_area(curve_2, [2, 3], bounded_graph=curve_1, color=GREY, opacity=0.5)
+self.add(ax, labels, curve_1, curve_2, line_1, line_2, riemann_area, area)
+References: coordinate_systems plot() get_vertical_line_to_graph() get_area() get_axis_labels()
+Example: PolygonOnAxes ¶
+from manim import *
+class PolygonOnAxes(Scene):
+def get_rectangle_corners(self, bottom_left, top_right):
+return [
+(top_right[0], top_right[1]),
+(bottom_left[0], top_right[1]),
+(bottom_left[0], bottom_left[1]),
+(top_right[0], bottom_left[1]),
+]
+def construct(self):
+ax = Axes(
+x_range=[0, 10],
+y_range=[0, 10],
+x_length=6,
+y_length=6,
+axis_config={"include_tip": False},
+)
+t = ValueTracker(5)
+k = 25
+graph = ax.plot(
+lambda x: k / x,
+color=YELLOW_D,
+x_range=[k / 10, 10.0, 0.01],
+use_smoothing=False,
+)
+def get_rectangle():
+polygon = Polygon(
+*[
+ax.c2p(*i)
+for i in self.get_rectangle_corners(
+(0, 0), (t.get_value(), k / t.get_value())
+)
+]
+)
+polygon.stroke_width = 1
+polygon.set_fill(BLUE, opacity=0.5)
+polygon.set_stroke(YELLOW_B)
+return polygon
+polygon = always_redraw(get_rectangle)
+dot = Dot()
+dot.add_updater(lambda x: x.move_to(ax.c2p(t.get_value(), k / t.get_value())))
+dot.set_z_index(10)
+self.add(ax, graph, dot)
+self.play(Create(polygon))
+self.play(t.animate.set_value(10))
+self.play(t.animate.set_value(k / 10))
+self.play(t.animate.set_value(5))
+class PolygonOnAxes(Scene):
+def get_rectangle_corners(self, bottom_left, top_right):
+return [
+(top_right[0], top_right[1]),
+(bottom_left[0], top_right[1]),
+(bottom_left[0], bottom_left[1]),
+(top_right[0], bottom_left[1]),
+]
+def construct(self):
+ax = Axes(
+x_range=[0, 10],
+y_range=[0, 10],
+x_length=6,
+y_length=6,
+axis_config={"include_tip": False},
+)
+t = ValueTracker(5)
+k = 25
+graph = ax.plot(
+lambda x: k / x,
+color=YELLOW_D,
+x_range=[k / 10, 10.0, 0.01],
+use_smoothing=False,
+)
+def get_rectangle():
+polygon = Polygon(
+*[
+ax.c2p(*i)
+for i in self.get_rectangle_corners(
+(0, 0), (t.get_value(), k / t.get_value())
+)
+]
+)
+polygon.stroke_width = 1
+polygon.set_fill(BLUE, opacity=0.5)
+polygon.set_stroke(YELLOW_B)
+return polygon
+polygon = always_redraw(get_rectangle)
+dot = Dot()
+dot.add_updater(lambda x: x.move_to(ax.c2p(t.get_value(), k / t.get_value())))
+dot.set_z_index(10)
+self.add(ax, graph, dot)
+self.play(Create(polygon))
+self.play(t.animate.set_value(10))
+self.play(t.animate.set_value(k / 10))
+self.play(t.animate.set_value(5))
+References: Axes Polygon
+Example: HeatDiagramPlot ¶
+from manim import *
+class HeatDiagramPlot(Scene):
+def construct(self):
+ax = Axes(
+x_range=[0, 40, 5],
+y_range=[-8, 32, 5],
+x_length=9,
+y_length=6,
+x_axis_config={"numbers_to_include": np.arange(0, 40, 5)},
+y_axis_config={"numbers_to_include": np.arange(-5, 34, 5)},
+tips=False,
+)
+labels = ax.get_axis_labels(
+x_label=Tex(r"$\Delta Q$"), y_label=Tex(r"T[$^\circ C$]")
+)
+x_vals = [0, 8, 38, 39]
+y_vals = [20, 0, 0, -5]
+graph = ax.plot_line_graph(x_values=x_vals, y_values=y_vals)
+self.add(ax, labels, graph)
+class HeatDiagramPlot(Scene):
+def construct(self):
+ax = Axes(
+x_range=[0, 40, 5],
+y_range=[-8, 32, 5],
+x_length=9,
+y_length=6,
+x_axis_config={"numbers_to_include": np.arange(0, 40, 5)},
+y_axis_config={"numbers_to_include": np.arange(-5, 34, 5)},
+tips=False,
+)
+labels = ax.get_axis_labels(
+x_label=Tex(r"$\Delta Q$"), y_label=Tex(r"T[$^\circ C$]")
+)
+x_vals = [0, 8, 38, 39]
+y_vals = [20, 0, 0, -5]
+graph = ax.plot_line_graph(x_values=x_vals, y_values=y_vals)
+self.add(ax, labels, graph)
+References: coordinate_systems plot_line_graph() get_axis_labels()
+Special Camera Settings¶
+Example: FollowingGraphCamera ¶
+from manim import *
+class FollowingGraphCamera(MovingCameraScene):
+def construct(self):
+self.camera.frame.save_state()
+# create the axes and the curve
+ax = Axes(x_range=[-1, 10], y_range=[-1, 10])
+graph = ax.plot(lambda x: np.sin(x), color=BLUE, x_range=[0, 3 * PI])
+# create dots based on the graph
+moving_dot = Dot(ax.i2gp(graph.t_min, graph), color=ORANGE)
+dot_1 = Dot(ax.i2gp(graph.t_min, graph))
+dot_2 = Dot(ax.i2gp(graph.t_max, graph))
+self.add(ax, graph, dot_1, dot_2, moving_dot)
+self.play(self.camera.frame.animate.scale(0.5).move_to(moving_dot))
+def update_curve(mob):
+mob.move_to(moving_dot.get_center())
+self.camera.frame.add_updater(update_curve)
+self.play(MoveAlongPath(moving_dot, graph, rate_func=linear))
+self.camera.frame.remove_updater(update_curve)
+self.play(Restore(self.camera.frame))
+class FollowingGraphCamera(MovingCameraScene):
+def construct(self):
+self.camera.frame.save_state()
+# create the axes and the curve
+ax = Axes(x_range=[-1, 10], y_range=[-1, 10])
+graph = ax.plot(lambda x: np.sin(x), color=BLUE, x_range=[0, 3 * PI])
+# create dots based on the graph
+moving_dot = Dot(ax.i2gp(graph.t_min, graph), color=ORANGE)
+dot_1 = Dot(ax.i2gp(graph.t_min, graph))
+dot_2 = Dot(ax.i2gp(graph.t_max, graph))
+self.add(ax, graph, dot_1, dot_2, moving_dot)
+self.play(self.camera.frame.animate.scale(0.5).move_to(moving_dot))
+def update_curve(mob):
+mob.move_to(moving_dot.get_center())
+self.camera.frame.add_updater(update_curve)
+self.play(MoveAlongPath(moving_dot, graph, rate_func=linear))
+self.camera.frame.remove_updater(update_curve)
+self.play(Restore(self.camera.frame))
+References: moving_camera_scene MovingCameraScene MoveAlongPath Restore plot() add_updater()
+Example: MovingZoomedSceneAround ¶
+from manim import *
+class MovingZoomedSceneAround(ZoomedScene):
+# contributed by TheoremofBeethoven, www.youtube.com/c/TheoremofBeethoven
+def __init__(self, **kwargs):
+ZoomedScene.__init__(
+self,
+zoom_factor=0.3,
+zoomed_display_height=1,
+zoomed_display_width=6,
+image_frame_stroke_width=20,
+zoomed_camera_config={
+"default_frame_stroke_width": 3,
+},
+**kwargs
+)
+def construct(self):
+dot = Dot().shift(UL * 2)
+image = ImageMobject(np.uint8([[0, 100, 30, 200],
+[255, 0, 5, 33]]))
+image.height = 7
+frame_text = Text("Frame", color=PURPLE, font_size=67)
+zoomed_camera_text = Text("Zoomed camera", color=RED, font_size=67)
+self.add(image, dot)
+zoomed_camera = self.zoomed_camera
+zoomed_display = self.zoomed_display
+frame = zoomed_camera.frame
+zoomed_display_frame = zoomed_display.display_frame
+frame.move_to(dot)
+frame.set_color(PURPLE)
+zoomed_display_frame.set_color(RED)
+zoomed_display.shift(DOWN)
+zd_rect = BackgroundRectangle(zoomed_display, fill_opacity=0, buff=MED_SMALL_BUFF)
+self.add_foreground_mobject(zd_rect)
+unfold_camera = UpdateFromFunc(zd_rect, lambda rect: rect.replace(zoomed_display))
+frame_text.next_to(frame, DOWN)
+self.play(Create(frame), FadeIn(frame_text, shift=UP))
+self.activate_zooming()
+self.play(self.get_zoomed_display_pop_out_animation(), unfold_camera)
+zoomed_camera_text.next_to(zoomed_display_frame, DOWN)
+self.play(FadeIn(zoomed_camera_text, shift=UP))
+# Scale in        x   y  z
+scale_factor = [0.5, 1.5, 0]
+self.play(
+frame.animate.scale(scale_factor),
+zoomed_display.animate.scale(scale_factor),
+FadeOut(zoomed_camera_text),
+FadeOut(frame_text)
+)
+self.wait()
+self.play(ScaleInPlace(zoomed_display, 2))
+self.wait()
+self.play(frame.animate.shift(2.5 * DOWN))
+self.wait()
+self.play(self.get_zoomed_display_pop_out_animation(), unfold_camera, rate_func=lambda t: smooth(1 - t))
+self.play(Uncreate(zoomed_display_frame), FadeOut(frame))
+self.wait()
+class MovingZoomedSceneAround(ZoomedScene):
+# contributed by TheoremofBeethoven, www.youtube.com/c/TheoremofBeethoven
+def __init__(self, **kwargs):
+ZoomedScene.__init__(
+self,
+zoom_factor=0.3,
+zoomed_display_height=1,
+zoomed_display_width=6,
+image_frame_stroke_width=20,
+zoomed_camera_config={
+"default_frame_stroke_width": 3,
+},
+**kwargs
+)
+def construct(self):
+dot = Dot().shift(UL * 2)
+image = ImageMobject(np.uint8([[0, 100, 30, 200],
+[255, 0, 5, 33]]))
+image.height = 7
+frame_text = Text("Frame", color=PURPLE, font_size=67)
+zoomed_camera_text = Text("Zoomed camera", color=RED, font_size=67)
+self.add(image, dot)
+zoomed_camera = self.zoomed_camera
+zoomed_display = self.zoomed_display
+frame = zoomed_camera.frame
+zoomed_display_frame = zoomed_display.display_frame
+frame.move_to(dot)
+frame.set_color(PURPLE)
+zoomed_display_frame.set_color(RED)
+zoomed_display.shift(DOWN)
+zd_rect = BackgroundRectangle(zoomed_display, fill_opacity=0, buff=MED_SMALL_BUFF)
+self.add_foreground_mobject(zd_rect)
+unfold_camera = UpdateFromFunc(zd_rect, lambda rect: rect.replace(zoomed_display))
+frame_text.next_to(frame, DOWN)
+self.play(Create(frame), FadeIn(frame_text, shift=UP))
+self.activate_zooming()
+self.play(self.get_zoomed_display_pop_out_animation(), unfold_camera)
+zoomed_camera_text.next_to(zoomed_display_frame, DOWN)
+self.play(FadeIn(zoomed_camera_text, shift=UP))
+# Scale in        x   y  z
+scale_factor = [0.5, 1.5, 0]
+self.play(
+frame.animate.scale(scale_factor),
+zoomed_display.animate.scale(scale_factor),
+FadeOut(zoomed_camera_text),
+FadeOut(frame_text)
+)
+self.wait()
+self.play(ScaleInPlace(zoomed_display, 2))
+self.wait()
+self.play(frame.animate.shift(2.5 * DOWN))
+self.wait()
+self.play(self.get_zoomed_display_pop_out_animation(), unfold_camera, rate_func=lambda t: smooth(1 - t))
+self.play(Uncreate(zoomed_display_frame), FadeOut(frame))
+self.wait()
+References: zoomed_scene ZoomedScene BackgroundRectangle UpdateFromFunc add_updater() get_zoomed_display_pop_out_animation()
+Example: FixedInFrameMObjectTest ¶
+from manim import *
+class FixedInFrameMObjectTest(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+self.set_camera_orientation(phi=75 * DEGREES, theta=-45 * DEGREES)
+text3d = Text("This is a 3D text")
+self.add_fixed_in_frame_mobjects(text3d)
+text3d.to_corner(UL)
+self.add(axes)
+self.wait()
+class FixedInFrameMObjectTest(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+self.set_camera_orientation(phi=75 * DEGREES, theta=-45 * DEGREES)
+text3d = Text("This is a 3D text")
+self.add_fixed_in_frame_mobjects(text3d)
+text3d.to_corner(UL)
+self.add(axes)
+self.wait()
+References: ThreeDScene set_camera_orientation() add_fixed_in_frame_mobjects()
+Example: ThreeDLightSourcePosition ¶
+from manim import *
+class ThreeDLightSourcePosition(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+sphere = Surface(
+lambda u, v: np.array([
+1.5 * np.cos(u) * np.cos(v),
+1.5 * np.cos(u) * np.sin(v),
+1.5 * np.sin(u)
+]), v_range=[0, TAU], u_range=[-PI / 2, PI / 2],
+checkerboard_colors=[RED_D, RED_E], resolution=(15, 32)
+)
+self.renderer.camera.light_source.move_to(3*IN) # changes the source of the light
+self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+self.add(axes, sphere)
+class ThreeDLightSourcePosition(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+sphere = Surface(
+lambda u, v: np.array([
+1.5 * np.cos(u) * np.cos(v),
+1.5 * np.cos(u) * np.sin(v),
+1.5 * np.sin(u)
+]), v_range=[0, TAU], u_range=[-PI / 2, PI / 2],
+checkerboard_colors=[RED_D, RED_E], resolution=(15, 32)
+)
+self.renderer.camera.light_source.move_to(3*IN) # changes the source of the light
+self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+self.add(axes, sphere)
+References: ThreeDScene ThreeDAxes Surface set_camera_orientation()
+Example: ThreeDCameraRotation ¶
+from manim import *
+class ThreeDCameraRotation(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+circle=Circle()
+self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+self.add(circle,axes)
+self.begin_ambient_camera_rotation(rate=0.1)
+self.wait()
+self.stop_ambient_camera_rotation()
+self.move_camera(phi=75 * DEGREES, theta=30 * DEGREES)
+self.wait()
+class ThreeDCameraRotation(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+circle=Circle()
+self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+self.add(circle,axes)
+self.begin_ambient_camera_rotation(rate=0.1)
+self.wait()
+self.stop_ambient_camera_rotation()
+self.move_camera(phi=75 * DEGREES, theta=30 * DEGREES)
+self.wait()
+References: ThreeDScene ThreeDAxes begin_ambient_camera_rotation() stop_ambient_camera_rotation()
+Example: ThreeDCameraIllusionRotation ¶
+from manim import *
+class ThreeDCameraIllusionRotation(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+circle=Circle()
+self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+self.add(circle,axes)
+self.begin_3dillusion_camera_rotation(rate=2)
+self.wait(PI/2)
+self.stop_3dillusion_camera_rotation()
+class ThreeDCameraIllusionRotation(ThreeDScene):
+def construct(self):
+axes = ThreeDAxes()
+circle=Circle()
+self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+self.add(circle,axes)
+self.begin_3dillusion_camera_rotation(rate=2)
+self.wait(PI/2)
+self.stop_3dillusion_camera_rotation()
+References: ThreeDScene ThreeDAxes begin_3dillusion_camera_rotation() stop_3dillusion_camera_rotation()
+Example: ThreeDSurfacePlot ¶
+from manim import *
+class ThreeDSurfacePlot(ThreeDScene):
+def construct(self):
+resolution_fa = 24
+self.set_camera_orientation(phi=75 * DEGREES, theta=-30 * DEGREES)
+def param_gauss(u, v):
+x = u
+y = v
+sigma, mu = 0.4, [0.0, 0.0]
+d = np.linalg.norm(np.array([x - mu[0], y - mu[1]]))
+z = np.exp(-(d ** 2 / (2.0 * sigma ** 2)))
+return np.array([x, y, z])
+gauss_plane = Surface(
+param_gauss,
+resolution=(resolution_fa, resolution_fa),
+v_range=[-2, +2],
+u_range=[-2, +2]
+)
+gauss_plane.scale(2, about_point=ORIGIN)
+gauss_plane.set_style(fill_opacity=1,stroke_color=GREEN)
+gauss_plane.set_fill_by_checkerboard(ORANGE, BLUE, opacity=0.5)
+axes = ThreeDAxes()
+self.add(axes,gauss_plane)
+class ThreeDSurfacePlot(ThreeDScene):
+def construct(self):
+resolution_fa = 24
+self.set_camera_orientation(phi=75 * DEGREES, theta=-30 * DEGREES)
+def param_gauss(u, v):
+x = u
+y = v
+sigma, mu = 0.4, [0.0, 0.0]
+d = np.linalg.norm(np.array([x - mu[0], y - mu[1]]))
+z = np.exp(-(d ** 2 / (2.0 * sigma ** 2)))
+return np.array([x, y, z])
+gauss_plane = Surface(
+param_gauss,
+resolution=(resolution_fa, resolution_fa),
+v_range=[-2, +2],
+u_range=[-2, +2]
+)
+gauss_plane.scale(2, about_point=ORIGIN)
+gauss_plane.set_style(fill_opacity=1,stroke_color=GREEN)
+gauss_plane.set_fill_by_checkerboard(ORANGE, BLUE, opacity=0.5)
+axes = ThreeDAxes()
+self.add(axes,gauss_plane)
+References: ThreeDScene Surface
+Advanced Projects¶
+Example: OpeningManim ¶
+from manim import *
+class OpeningManim(Scene):
+def construct(self):
+title = Tex(r"This is some \LaTeX")
+basel = MathTex(r"\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}")
+VGroup(title, basel).arrange(DOWN)
+self.play(
+Write(title),
+FadeIn(basel, shift=DOWN),
+)
+self.wait()
+transform_title = Tex("That was a transform")
+transform_title.to_corner(UP + LEFT)
+self.play(
+Transform(title, transform_title),
+LaggedStart(*[FadeOut(obj, shift=DOWN) for obj in basel]),
+)
+self.wait()
+grid = NumberPlane()
+grid_title = Tex("This is a grid", font_size=72)
+grid_title.move_to(transform_title)
+self.add(grid, grid_title)  # Make sure title is on top of grid
+self.play(
+FadeOut(title),
+FadeIn(grid_title, shift=UP),
+Create(grid, run_time=3, lag_ratio=0.1),
+)
+self.wait()
+grid_transform_title = Tex(
+r"That was a non-linear function \\ applied to the grid"
+)
+grid_transform_title.move_to(grid_title, UL)
+grid.prepare_for_nonlinear_transform()
+self.play(
+grid.animate.apply_function(
+lambda p: p
++ np.array(
+[
+np.sin(p[1]),
+np.sin(p[0]),
+0,
+]
+)
+),
+run_time=3,
+)
+self.wait()
+self.play(Transform(grid_title, grid_transform_title))
+self.wait()
+class OpeningManim(Scene):
+def construct(self):
+title = Tex(r"This is some \LaTeX")
+basel = MathTex(r"\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}")
+VGroup(title, basel).arrange(DOWN)
+self.play(
+Write(title),
+FadeIn(basel, shift=DOWN),
+)
+self.wait()
+transform_title = Tex("That was a transform")
+transform_title.to_corner(UP + LEFT)
+self.play(
+Transform(title, transform_title),
+LaggedStart(*[FadeOut(obj, shift=DOWN) for obj in basel]),
+)
+self.wait()
+grid = NumberPlane()
+grid_title = Tex("This is a grid", font_size=72)
+grid_title.move_to(transform_title)
+self.add(grid, grid_title)  # Make sure title is on top of grid
+self.play(
+FadeOut(title),
+FadeIn(grid_title, shift=UP),
+Create(grid, run_time=3, lag_ratio=0.1),
+)
+self.wait()
+grid_transform_title = Tex(
+r"That was a non-linear function \\ applied to the grid"
+)
+grid_transform_title.move_to(grid_title, UL)
+grid.prepare_for_nonlinear_transform()
+self.play(
+grid.animate.apply_function(
+lambda p: p
++ np.array(
+[
+np.sin(p[1]),
+np.sin(p[0]),
+0,
+]
+)
+),
+run_time=3,
+)
+self.wait()
+self.play(Transform(grid_title, grid_transform_title))
+self.wait()
+References: Tex MathTex Write FadeIn LaggedStart NumberPlane Create prepare_for_nonlinear_transform()
+Example: SineCurveUnitCircle ¶
+from manim import *
+class SineCurveUnitCircle(Scene):
+# contributed by heejin_park, https://infograph.tistory.com/230
+def construct(self):
+self.show_axis()
+self.show_circle()
+self.move_dot_and_draw_curve()
+self.wait()
+def show_axis(self):
+x_start = np.array([-6,0,0])
+x_end = np.array([6,0,0])
+y_start = np.array([-4,-2,0])
+y_end = np.array([-4,2,0])
+x_axis = Line(x_start, x_end)
+y_axis = Line(y_start, y_end)
+self.add(x_axis, y_axis)
+self.add_x_labels()
+self.origin_point = np.array([-4,0,0])
+self.curve_start = np.array([-3,0,0])
+def add_x_labels(self):
+x_labels = [
+MathTex(r"\pi"), MathTex(r"2 \pi"),
+MathTex(r"3 \pi"), MathTex(r"4 \pi"),
+]
+for i in range(len(x_labels)):
+x_labels[i].next_to(np.array([-1 + 2*i, 0, 0]), DOWN)
+self.add(x_labels[i])
+def show_circle(self):
+circle = Circle(radius=1)
+circle.move_to(self.origin_point)
+self.add(circle)
+self.circle = circle
+def move_dot_and_draw_curve(self):
+orbit = self.circle
+origin_point = self.origin_point
+dot = Dot(radius=0.08, color=YELLOW)
+dot.move_to(orbit.point_from_proportion(0))
+self.t_offset = 0
+rate = 0.25
+def go_around_circle(mob, dt):
+self.t_offset += (dt * rate)
+# print(self.t_offset)
+mob.move_to(orbit.point_from_proportion(self.t_offset % 1))
+def get_line_to_circle():
+return Line(origin_point, dot.get_center(), color=BLUE)
+def get_line_to_curve():
+x = self.curve_start[0] + self.t_offset * 4
+y = dot.get_center()[1]
+return Line(dot.get_center(), np.array([x,y,0]), color=YELLOW_A, stroke_width=2 )
+self.curve = VGroup()
+self.curve.add(Line(self.curve_start,self.curve_start))
+def get_curve():
+last_line = self.curve[-1]
+x = self.curve_start[0] + self.t_offset * 4
+y = dot.get_center()[1]
+new_line = Line(last_line.get_end(),np.array([x,y,0]), color=YELLOW_D)
+self.curve.add(new_line)
+return self.curve
+dot.add_updater(go_around_circle)
+origin_to_circle_line = always_redraw(get_line_to_circle)
+dot_to_curve_line = always_redraw(get_line_to_curve)
+sine_curve_line = always_redraw(get_curve)
+self.add(dot)
+self.add(orbit, origin_to_circle_line, dot_to_curve_line, sine_curve_line)
+self.wait(8.5)
+dot.remove_updater(go_around_circle)
+class SineCurveUnitCircle(Scene):
+# contributed by heejin_park, https://infograph.tistory.com/230
+def construct(self):
+self.show_axis()
+self.show_circle()
+self.move_dot_and_draw_curve()
+self.wait()
+def show_axis(self):
+x_start = np.array([-6,0,0])
+x_end = np.array([6,0,0])
+y_start = np.array([-4,-2,0])
+y_end = np.array([-4,2,0])
+x_axis = Line(x_start, x_end)
+y_axis = Line(y_start, y_end)
+self.add(x_axis, y_axis)
+self.add_x_labels()
+self.origin_point = np.array([-4,0,0])
+self.curve_start = np.array([-3,0,0])
+def add_x_labels(self):
+x_labels = [
+MathTex(r"\pi"), MathTex(r"2 \pi"),
+MathTex(r"3 \pi"), MathTex(r"4 \pi"),
+]
+for i in range(len(x_labels)):
+x_labels[i].next_to(np.array([-1 + 2*i, 0, 0]), DOWN)
+self.add(x_labels[i])
+def show_circle(self):
+circle = Circle(radius=1)
+circle.move_to(self.origin_point)
+self.add(circle)
+self.circle = circle
+def move_dot_and_draw_curve(self):
+orbit = self.circle
+origin_point = self.origin_point
+dot = Dot(radius=0.08, color=YELLOW)
+dot.move_to(orbit.point_from_proportion(0))
+self.t_offset = 0
+rate = 0.25
+def go_around_circle(mob, dt):
+self.t_offset += (dt * rate)
+# print(self.t_offset)
+mob.move_to(orbit.point_from_proportion(self.t_offset % 1))
+def get_line_to_circle():
+return Line(origin_point, dot.get_center(), color=BLUE)
+def get_line_to_curve():
+x = self.curve_start[0] + self.t_offset * 4
+y = dot.get_center()[1]
+return Line(dot.get_center(), np.array([x,y,0]), color=YELLOW_A, stroke_width=2 )
+self.curve = VGroup()
+self.curve.add(Line(self.curve_start,self.curve_start))
+def get_curve():
+last_line = self.curve[-1]
+x = self.curve_start[0] + self.t_offset * 4
+y = dot.get_center()[1]
+new_line = Line(last_line.get_end(),np.array([x,y,0]), color=YELLOW_D)
+self.curve.add(new_line)
+return self.curve
+dot.add_updater(go_around_circle)
+origin_to_circle_line = always_redraw(get_line_to_circle)
+dot_to_curve_line = always_redraw(get_line_to_curve)
+sine_curve_line = always_redraw(get_curve)
+self.add(dot)
+self.add(orbit, origin_to_circle_line, dot_to_curve_line, sine_curve_line)
+self.wait(8.5)
+dot.remove_updater(go_around_circle)
+References: MathTex Circle Dot Line VGroup always_redraw() add_updater() remove_updater()
+On this page
+Example Gallery
+Basic Concepts
+Animations
+Plotting with Manim
+Special Camera Settings
+Advanced Projects
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference_index/animations.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+Animations¶
+animation
+Animate mobjects.
+changing
+Animation of a mobject boundary and tracing of points.
+composition
+Tools for displaying multiple animations at once.
+creation
+Animate the display or removal of a mobject from a scene.
+fading
+Fading in and out of view.
+growing
+Animations that introduce mobjects to scene by growing them from points.
+indication
+Animations drawing attention to particular mobjects.
+movement
+Animations related to movement.
+numbers
+Animations for changing numbers.
+rotation
+Animations related to rotation.
+specialized
+speedmodifier
+Utilities for modifying the speed at which animations are played.
+transform
+Animations transforming one mobject into another.
+transform_matching_parts
+Animations that try to transform Mobjects while keeping track of identical parts.
+updaters
+Animations and utility mobjects related to update functions.
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/changelog/0.19.0-changelog.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+v0.19.0¶
+Date:
+January 20, 2025
+Major Changes¶
+With the release of Manim v0.19.0, we’ve made lots of progress with making
+Manim easier to install!
+One of the biggest changes in this release is the replacement of the external
+ffmpeg dependency with the pyav library. This means that users no longer
+have to install ffmpeg in order to use Manim - they can just pip install manim
+and it will work!
+In light of this change, we also rewrote our installation docs
+to recommend using a new tool called uv to install Manim.
+Note
+Do not worry if you installed Manim with any previous methods, like homebrew, pip,
+choco, or scoop. Those methods will still work, and are not deprecated. However,
+the recommended way to install Manim is now with uv.
+Contributors¶
+A total of 54 people contributed to this
+release. People with a ‘+’ by their names authored a patch for the first
+time.
+Aarush Deshpande
+Abulafia
+Achille Fouilleul +
+Benjamin Hackl
+CJ Lee +
+Cameron Burdgick +
+Chin Zhe Ning
+Christopher Hampson +
+ChungLeeCN +
+Eddie Ruiz +
+Muenkel +
+Francisco Manríquez Novoa
+Geoo Chi +
+Henrik Skov Midtiby +
+Hugo Chargois +
+Irvanal Haq +
+Jay Gupta +
+Laifsyn +
+Larry Skuse +
+Nemo2510 +
+Nikhil Iyer
+Nikhila Gurusinghe +
+Rehmatpal Singh +
+Romit Mohane +
+Saveliy Yusufov +
+Sir James Clark Maxwell
+Sophia Wisdom +
+Tristan Schulz
+VPC +
+Victorien
+Xiuyuan (Jack) Yuan +
+alembcke
+anagorko +
+czuzu +
+fogsong233 +
+jkjkil4 +
+modjfy +
+nitzanbueno +
+yang-tsao +
+The patches included in this release have been reviewed by
+the following contributors.
+Aarush Deshpande
+Achille Fouilleul
+Benjamin Hackl
+Christopher Hampson
+Eddie Ruiz
+Francisco Manríquez Novoa
+Henrik Skov Midtiby
+Hugo Chargois
+Irvanal Haq
+Jay Gupta
+Jérome Eertmans
+Nemo2510
+Nikhila Gurusinghe
+OliverStrait
+Saveliy Yusufov
+Sir James Clark Maxwell
+Tristan Schulz
+VPC
+Victorien
+Xiuyuan (Jack) Yuan
+alembcke
+github-advanced-security[bot]
+Pull requests merged¶
+A total of 138 pull requests were merged for this release.
+Highlights¶
+#3501: Replaced external ffmpeg dependency with pyavThis change removes the need to have ffmpeg available as a command line tool
+when using Manim. While pyav technically also uses ffmpeg internally,
+the maintainers of pyav distribute it in their binary wheels.
+#3518: Created a HSV color class, and added support for custom color spacesThis extends the color system of Manim and adds support to implement custom color spaces.
+See the implementation of HSV for a practical example.
+#3930: Completely reworked the installation instructionsAs a consequence of removing the need for the external ffmpeg dependency,
+we have reworked and massively simplified the installation instructions. Given
+that practically, user-written scenes are effectively small self-contained Python
+projects, the new instructions strongly recommend using the
+project and dependency management tool uv to ensure
+a consistent and reproducible environment.
+#3967: Added support for Python 3.13This adds support for Python 3.13, which brings the range of currently supported
+Python versions to 3.9 – 3.13.
+#3966: VGroup can now be initialized with VMobject iterablesGroups of Mobjects can now be created by passing an iterable to the VGroup
+constructors:
+my_group = VGroup(Dot() for _ in range(10))
+Breaking changes¶
+#3797: Replaced Code.styles_list with Code.get_styles_list()The styles_list attribute of the Code class has been replaced with
+a class method Code.get_styles_list(). This method returns a list of all
+available values for the formatter_style argument of Code.
+#3884: Renamed parameters and variables conflicting with builtin functionsTo avoid having keyword arguments named after builtin functions, the following
+two changes were made to user-facing functions:
+ManimColor.from_hex(hex=...) is now  ManimColor.from_hex(hex_str=...)
+Scene.next_section(type=...) is now Scene.next_section(section_type=...)
+#3922: Removed inner_radius and outer_radius from Sector constructorTo construct a Sector, you now need to specify a radius (and an angle).
+In particular, AnnularSector still accepts both inner_radius and outer_radius
+arguments.
+#3964: Allow SurroundingRectangle to accept multiple MobjectsThis changes the signature of SurroundingRectangle to accept
+a sequence of Mobjects instead of a single Mobject. As a consequence, other
+arguments that could be specified as positional ones before now need to be
+specified as keyword arguments:
+SurroundingRectangle(some_mobject, RED, 0.3)  # raises error now
+SurroundingRectangle(some_mobject, color=RED, buff=0.3)  # correct usage
+#4115: Completely rewrite the implementation of the Code mobjectThis includes several breaking changes to the interface of the class to make it
+more consistent. See the documentation of Code for a detailed description
+of the new interface, and the description of the pull request #4115 for
+an overview of changes to the old keyword arguments.
+New features¶
+#3148: Added a colorscale argument to CoordinateSystem.plot()
+#3612: Add three animations that together simulate a typing animation
+#3754: Add @ shorthand for Axes.coords_to_point() and Axes.point_to_coords()
+#3876: Add Animation.set_default() class method
+#3903: Preserve colors of LaTeX coloring commands
+#3913: Added DVIPSNAMES and SVGNAMES color palettes
+#3933: Added ConvexHull, ConvexHull3D, Label and LabeledPolygram
+#3992: Add darker, lighter and contrasting methods to ManimColor
+#3997: Add a time property to scene (Scene.time)
+#4039: Added the delay parameter to turn_animation_into_updater()
+Enhancements¶
+#3829: Rewrite get_quadratic_approximation_of_cubic() to produce smoother animated curves
+#3855: Log execution time of sample scene in the manim checkhealth command
+#3888: Significantly reduce rendering time with a separate thread for writing frames to stream
+#3890: Better error messages for DrawBorderThenFill
+#3893: Improve line rendering performance of Cylinder
+#3901: Changed Square.side_length attribute to a property
+#3965: Added the scale_stroke boolean parameter to VMobject.scale()
+#3974: Made videos embedded in Google Colab by default
+#3982: Refactored run_time validation for Animation and Scene.wait()
+#4017: Allow animations with run_time=0 and implement convenience Add animation
+#4034: Draw more accurate circular Arc mobjects for large angles
+#4051: Add __hash__ method to ManimColor
+#4108: Remove duplicate declaration of __all__ in vectorized_mobject
+Optimizations¶
+#3760: Optimize VMobject.pointwise_become_partial()
+#3765: Optimize VMobject methods which append to points
+#3766: Created and optimized Bézier splitting functions such as partial_bezier_points() in manim.utils.bezier
+#3767: Optimized manim.utils.bezier.get_smooth_cubic_bezier_handle_points()
+#3768: Optimized manim.utils.bezier.is_closed()
+#3960: Optimized interpolate() and bezier() in manim.utils.bezier
+Fixed bugs¶
+#3706: Fixed Line.put_start_and_end_on() to use the actual end of an Arrow3D
+#3732: Fixed infinite loop in OpenGL BackgroundRectangle.get_color()
+#3756: Fix assertions and improve error messages when adding submobjects
+#3778: Fixed there_and_back_with_pause() rate function behaviour with different pause_ratio values
+#3786: Fix DiGraph edges not fading correctly on FadeIn and FadeOut
+#3790: Fixed the get_nth_subpath() function expecting a numpy array
+#3832: Convert audio files to .wav before passing to pydub
+#3680: Fixed behavior of config.background_opacity < 1
+#3839: Fixed ManimConfig.format not updating movie file extension
+#3885: Fixed OpenGLMobject.invert() not reassembling family
+#3951: Call Animation.finish() for animations in an AnimationGroup
+#4013: Fixed scene skipping for ManimConfig.upto_animation_number set to 0
+#4089: Fixed bug with opacity of ImageMobject
+#4091: Fixed VMobject.add_points_as_corners() to safely handle empty points parameter
+Documentation-related changes¶
+#3669: Added a manim.typing guide
+#3715: Added docstrings to Brace
+#3745: Underline tag should be <u></u> in the documentation
+#3818: Automatically document usages of typing.TypeVar
+#3849: Fix incorrect versionadded version number in plugin section in docs
+#3851: Rename manim.typing.Image type aliases to PixelArray to avoid conflict with PIL.Image
+#3857: Update installation instructions for MacOS (via dedicated brew formula)
+#3878: Fixed typehint in types.rst and replaced outdated reference to manim.typing.Image with manim.typing.PixelArray
+#3924: Fix SyntaxWarning when building docs + use Python 3.13 for readthedocs build
+#3958: Fix: .to_edge’s example demonstration in docs
+#3972: Refining documentations for moving_camera_scene module
+#4032: Bump version and create changelog for v0.19.0
+#4044: Added support for autodocumenting type aliases that use the type syntax
+#4065: Polish documentation of utils.color.core and remove interpolate_array function
+#4077: Update README and documentation landing page, improve way how 3b1b is credited
+#4100: Add wavy square example to Homotopy
+#4107: Corrected a typo in the deep dive guide
+#4116: Fix broken link to Poetry installation in contribution docs
+Type Hints¶
+#3751: Added typehints to manim.utils.iterables
+#3803: Added typings to OpenGLMobject
+#3902: fixed a wrong type hint in Scene.restructure_mobjects()
+#3916: fixed type hint in DrawBorderThenFill.interpolate_submobject()
+#3926: Fixed some typehints of ParametricFunction
+#3940: Fixed np.float_ to np.float64 while using numpy versions above 2.0
+#3961: Added typehints to manim.mobject.geometry
+#3980: Added new PointND and PointND_Array type aliases
+#3988: Added type hints to manim.cli module
+#3999: Add type annotations to manim.utils
+#4006: Stopped ignoring manim.plugins errors in mypy.ini
+#4007: Added typings to manim.__main__
+#4027: Rename InternalPoint3D to Point3D, Point3D to Point3DLike and other point-related type aliases
+#4038: Fixed type hint of Scene.play() to allow Mobject.animate
+Internal Improvements and Automation¶
+#3737: Fixed action for building downloadable documentation
+#3761: Use --py39-plus in pre-commit
+#3777: Add pyproject for ruff formatting
+#3779: Switch pre-commit to use ruff for linting
+#3795: Replace Pyupgrade with Ruff rule
+#3812: Fix MacOS LaTeX CI
+#3853: Change from tempconfig to a config fixture in tests
+#3858: Update docker to use ENV x=y instead of ENV x y
+#3872: Use ruff for pytest style
+#3873: Use ruff instead of flake8-simplify
+#3877: Fix pre-commit linting
+#3780: Add Ruff Lint
+#3781: Ignore Ruff format in git blame
+#3881: Standardize docstrings with ruff pydocstyle rules
+#3882: Change flake8-comprehensions and flake8-bugbear to ruff
+#3887: Fix typo from HSV PR
+#3923: Use Ruff pygrep rules
+#3925: Use Github Markdown on README
+#3955: Use subprocess instead of os.system.
+#3956: Set AAC codec for audio in mp4 files, add transcoding utility
+#4069: Include Noto fonts in Docker image
+#4102: Remove PT004 from Ruff ignore rules
+Dependencies¶
+#3739: [pre-commit.ci] pre-commit autoupdate
+#3746: Bump tqdm from 4.66.1 to 4.66.3
+#3750: Bump jinja2 from 3.1.3 to 3.1.4
+#3776: Bump requests from 2.31.0 to 2.32.0
+#3784: [pre-commit.ci] pre-commit autoupdate
+#3794: [pre-commit.ci] pre-commit autoupdate
+#3796: Bump tornado from 6.4 to 6.4.1
+#3801: [pre-commit.ci] pre-commit autoupdate
+#3809: [pre-commit.ci] pre-commit autoupdate
+#3810: Bump urllib3 from 2.2.1 to 2.2.2
+#3823: [pre-commit.ci] pre-commit autoupdate
+#3827: Fix docker build
+#3834: [pre-commit.ci] pre-commit autoupdate
+#3835: Bump docker/build-push-action from 5 to 6
+#3841: Bump certifi from 2024.2.2 to 2024.7.4
+#3844: [pre-commit.ci] pre-commit autoupdate
+#3847: Bump zipp from 3.18.2 to 3.19.1
+#3865: [pre-commit.ci] pre-commit autoupdate
+#3880: [pre-commit.ci] pre-commit autoupdate
+#3889: [pre-commit.ci] pre-commit autoupdate
+#3895: Lock poetry.lock
+#3896: [pre-commit.ci] pre-commit autoupdate
+#3904: [pre-commit.ci] pre-commit autoupdate
+#3911: [pre-commit.ci] pre-commit autoupdate
+#3918: [pre-commit.ci] pre-commit autoupdate
+#3929: [pre-commit.ci] pre-commit autoupdate
+#3931: Bump cryptography from 43.0.0 to 43.0.1
+#3987: [pre-commit.ci] pre-commit autoupdate
+#4023: Bump tornado from 6.4.1 to 6.4.2
+#4035: [pre-commit.ci] pre-commit autoupdate
+#4037: Cap pyav version
+On this page
+v0.19.0
+Major Changes
+Contributors
+Pull requests merged
+Highlights
+Breaking changes
+New features
+Enhancements
+Optimizations
+Fixed bugs
+Documentation-related changes
+Type Hints
+Internal Improvements and Automation
+Dependencies
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+Reference Manual¶
+This reference manual details modules, functions, and variables included in
+Manim, describing what they are and what they do.  For learning how to use
+Manim, see Tutorials.  For a list of changes since the last release, see
+the Changelog.
+Warning
+The pages linked to here are currently a work in progress.
+Inheritance Graphs¶
+Animations¶
+Inheritance diagram of manim.animation.animation, manim.animation.changing, manim.animation.composition, manim.animation.creation, manim.animation.fading, manim.animation.growing, manim.animation.indication, manim.animation.movement, manim.animation.numbers, manim.animation.rotation, manim.animation.specialized, manim.animation.speedmodifier, manim.animation.transform, manim.animation.transform_matching_parts, manim.animation.updaters.mobject_update_utils, manim.animation.updaters.update
+Cameras¶
+Inheritance diagram of manim.camera.camera, manim.camera.mapping_camera, manim.camera.moving_camera, manim.camera.multi_camera, manim.camera.three_d_camera
+Mobjects¶
+Inheritance diagram of manim.mobject.frame, manim.mobject.geometry.arc, manim.mobject.geometry.boolean_ops, manim.mobject.geometry.line, manim.mobject.geometry.polygram, manim.mobject.geometry.shape_matchers, manim.mobject.geometry.tips, manim.mobject.graph, manim.mobject.graphing.coordinate_systems, manim.mobject.graphing.functions, manim.mobject.graphing.number_line, manim.mobject.graphing.probability, manim.mobject.graphing.scale, manim.mobject.logo, manim.mobject.matrix, manim.mobject.mobject, manim.mobject.table, manim.mobject.three_d.polyhedra, manim.mobject.three_d.three_d_utils, manim.mobject.three_d.three_dimensions, manim.mobject.svg.brace, manim.mobject.svg.svg_mobject, manim.mobject.text.code_mobject, manim.mobject.text.numbers, manim.mobject.text.tex_mobject, manim.mobject.text.text_mobject, manim.mobject.types.image_mobject, manim.mobject.types.point_cloud_mobject, manim.mobject.types.vectorized_mobject, manim.mobject.value_tracker, manim.mobject.vector_field
+Scenes¶
+Inheritance diagram of manim.scene.moving_camera_scene, manim.scene.scene, manim.scene.scene_file_writer, manim.scene.three_d_scene, manim.scene.vector_space_scene, manim.scene.zoomed_scene
+Module Index¶
+Animations
+animation
+Add
+Animation
+Wait
+override_animation()
+prepare_animation()
+changing
+AnimatedBoundary
+TracedPath
+composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fading
+FadeIn
+FadeOut
+growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotation
+Rotate
+Rotating
+specialized
+Broadcast
+speedmodifier
+ChangeSpeed
+transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updaters
+Modules
+Cameras
+camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_camera
+MovingCamera
+multi_camera
+MultiCamera
+three_d_camera
+ThreeDCamera
+Configuration
+Module Index
+_config
+utils
+logger_utils
+Mobjects
+frame
+FullScreenRectangle
+ScreenRectangle
+geometry
+Modules
+graph
+NxGraph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphing
+Modules
+logo
+ManimBanner
+matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+get_det_text()
+matrix_to_mobject()
+matrix_to_tex_string()
+mobject
+TimeBasedUpdater
+NonTimeBasedUpdater
+Updater
+Group
+Mobject
+override_animate()
+svg
+Modules
+table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+text
+Modules
+three_d
+Modules
+types
+Modules
+utils
+get_mobject_class()
+get_point_mobject_class()
+get_vectorized_mobject_class()
+value_tracker
+ComplexValueTracker
+ValueTracker
+vector_field
+ArrowVectorField
+StreamLines
+VectorField
+Scenes
+moving_camera_scene
+MovingCameraScene
+section
+DefaultSectionType
+Section
+scene
+RerunSceneHandler
+Scene
+scene_file_writer
+SceneFileWriter
+convert_audio()
+to_av_frame_rate()
+three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_scene
+ZoomedScene
+Utilities and other modules
+Module Index
+bezier
+cli
+color
+commands
+config_ops
+constants
+debug
+deprecation
+docbuild
+hashing
+images
+ipython_magic
+iterables
+paths
+rate_functions
+simple_functions
+sounds
+space_ops
+testing
+tex
+tex_file_writing
+tex_templates
+typing
+On this page
+Reference Manual
+Inheritance Graphs
+Animations
+Cameras
+Mobjects
+Scenes
+Module Index
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+text_mobject¶
+Mobjects used for displaying (non-LaTeX) text.
+Note
+Just as you can use Tex and MathTex (from the module tex_mobject)
+to insert LaTeX to your videos, you can use Text to to add normal text.
+Important
+See the corresponding tutorial Text Without LaTeX, especially for information about fonts.
+The simplest way to add text to your animations is to use the Text class. It uses the Pango library to render text.
+With Pango, you are also able to render non-English alphabets like 你好 or  こんにちは or 안녕하세요 or مرحبا بالعالم.
+Examples
+Example: HelloWorld ¶
+from manim import *
+class HelloWorld(Scene):
+def construct(self):
+text = Text('Hello world').scale(3)
+self.add(text)
+class HelloWorld(Scene):
+def construct(self):
+text = Text('Hello world').scale(3)
+self.add(text)
+Example: TextAlignment ¶
+from manim import *
+class TextAlignment(Scene):
+def construct(self):
+title = Text("K-means clustering and Logistic Regression", color=WHITE)
+title.scale(0.75)
+self.add(title.to_edge(UP))
+t1 = Text("1. Measuring").set_color(WHITE)
+t2 = Text("2. Clustering").set_color(WHITE)
+t3 = Text("3. Regression").set_color(WHITE)
+t4 = Text("4. Prediction").set_color(WHITE)
+x = VGroup(t1, t2, t3, t4).arrange(direction=DOWN, aligned_edge=LEFT).scale(0.7).next_to(ORIGIN,DR)
+x.set_opacity(0.5)
+x.submobjects[1].set_opacity(1)
+self.add(x)
+class TextAlignment(Scene):
+def construct(self):
+title = Text("K-means clustering and Logistic Regression", color=WHITE)
+title.scale(0.75)
+self.add(title.to_edge(UP))
+t1 = Text("1. Measuring").set_color(WHITE)
+t2 = Text("2. Clustering").set_color(WHITE)
+t3 = Text("3. Regression").set_color(WHITE)
+t4 = Text("4. Prediction").set_color(WHITE)
+x = VGroup(t1, t2, t3, t4).arrange(direction=DOWN, aligned_edge=LEFT).scale(0.7).next_to(ORIGIN,DR)
+x.set_opacity(0.5)
+x.submobjects[1].set_opacity(1)
+self.add(x)
+Classes
+MarkupText
+Display (non-LaTeX) text rendered using Pango.
+Paragraph
+Display a paragraph of text.
+Text
+Functions
+register_font(font_file)[source]¶
+Temporarily add a font file to Pango’s search path.
+This searches for the font_file at various places. The order it searches it described below.
+Absolute path.
+In assets/fonts folder.
+In font/ folder.
+In the same directory.
+Parameters:
+font_file (str | Path) – The font file to add.
+Examples
+Use with register_font(...) to add a font file to search
+path.
+with register_font("path/to/font_file.ttf"):
+a = Text("Hello", font="Custom Font Name")
+Raises:
+FileNotFoundError: – If the font doesn’t exists.
+AttributeError: – If this method is used on macOS.
+.. important :: – This method is available for macOS for ManimPango>=v0.2.3. Using this
+method with previous releases will raise an AttributeError on macOS.
+Parameters:
+font_file (str | Path)
+remove_invisible_chars(mobject)[source]¶
+Function to remove unwanted invisible characters from some mobjects.
+Parameters:
+mobject (SVGMobject) – Any SVGMobject from which we want to remove unwanted invisible characters.
+Returns:
+The SVGMobject without unwanted invisible characters.
+Return type:
+SVGMobject
+On this page
+text_mobject
+register_font()
+remove_invisible_chars()
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference/manim.scene.scene.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+scene¶
+Basic canvas for animations.
+Classes
+RerunSceneHandler
+A class to handle rerunning a Scene after the input file is modified.
+Scene
+A Scene is the canvas of your animation.
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference/manim.animation.html
+================================================================================
+
+
+Error scraping https://docs.manim.community/en/stable/reference/manim.animation.html: 404 Client Error: Not Found for url: https://docs.manim.community/en/stable/reference/manim.animation.html
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference/manim.mobject.geometry.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+geometry¶
+Various geometric Mobjects.
+Modules¶
+arc
+Mobjects that are curved.
+boolean_ops
+Boolean operations for two-dimensional mobjects.
+labeled
+Mobjects that inherit from lines and contain a label along the length.
+line
+Mobjects that are lines or variations of them.
+polygram
+Mobjects that are simple geometric shapes.
+shape_matchers
+Mobjects used to mark and annotate other mobjects.
+tips
+A collection of tip mobjects for use with TipableVMobject.
+On this page
+geometry
+Modules
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/reference/manim.utils.color.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+color¶
+Utilities for working with colors and predefined color constants.
+Color data structure¶
+core
+Manim's (internal) color data structure and some utilities for color conversion.
+Predefined colors¶
+There are several predefined colors available in Manim:
+The colors listed in color.manim_colors are loaded into
+Manim’s global name space.
+The colors in color.AS2700, color.BS381,
+color.DVIPSNAMES, color.SVGNAMES, color.X11 and
+color.XKCD need to be accessed via their module (which are available
+in Manim’s global name space), or imported separately. For example:
+>>> from manim import XKCD
+>>> XKCD.AVOCADO
+ManimColor('#90B134')
+Or, alternatively:
+>>> from manim.utils.color.XKCD import AVOCADO
+>>> AVOCADO
+ManimColor('#90B134')
+The following modules contain the predefined color constants:
+manim_colors
+Colors included in the global name space.
+AS2700
+Australian Color Standard
+BS381
+British Color Standard
+DVIPSNAMES
+dvips Colors
+SVGNAMES
+SVG 1.1 Colors
+XKCD
+Colors from the XKCD Color Name Survey
+X11
+X11 Colors
+On this page
+color
+Color data structure
+Predefined colors
+
+
+================================================================================
+SOURCE: https://docs.manim.community/en/stable/tutorials/quickstart.html
+================================================================================
+
+
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Hide navigation sidebar
+Hide table of contents sidebar
+Skip to content
+Manim Community v0.19.0
+Example Gallery
+InstallationToggle navigation of Installation
+Installing Manim locally
+Conda
+Docker
+Jupyter Notebooks
+Tutorials & GuidesToggle navigation of Tutorials & Guides
+TutorialsToggle navigation of Tutorials
+Quickstart
+Manim’s Output Settings
+Manim’s building blocks
+Thematic GuidesToggle navigation of Thematic Guides
+Configuration
+A deep dive into Manim’s internals
+Rendering Text and Formulas
+Adding Voiceovers to Videos
+Frequently Asked QuestionsToggle navigation of Frequently Asked Questions
+FAQ: General Usage
+FAQ: Getting Help
+FAQ: Installation
+Where can I learn more about Manim’s internal structure?
+FAQ: OpenGL rendering
+Reference ManualToggle navigation of Reference Manual
+AnimationsToggle navigation of Animations
+animationToggle navigation of animation
+Add
+Animation
+Wait
+changingToggle navigation of changing
+AnimatedBoundary
+TracedPath
+compositionToggle navigation of composition
+AnimationGroup
+LaggedStart
+LaggedStartMap
+Succession
+creationToggle navigation of creation
+AddTextLetterByLetter
+AddTextWordByWord
+Create
+DrawBorderThenFill
+RemoveTextLetterByLetter
+ShowIncreasingSubsets
+ShowPartial
+ShowSubmobjectsOneByOne
+SpiralIn
+TypeWithCursor
+Uncreate
+UntypeWithCursor
+Unwrite
+Write
+fadingToggle navigation of fading
+FadeIn
+FadeOut
+growingToggle navigation of growing
+GrowArrow
+GrowFromCenter
+GrowFromEdge
+GrowFromPoint
+SpinInFromNothing
+indicationToggle navigation of indication
+ApplyWave
+Blink
+Circumscribe
+Flash
+FocusOn
+Indicate
+ShowPassingFlash
+ShowPassingFlashWithThinningStrokeWidth
+Wiggle
+movementToggle navigation of movement
+ComplexHomotopy
+Homotopy
+MoveAlongPath
+PhaseFlow
+SmoothedVectorizedHomotopy
+numbersToggle navigation of numbers
+ChangeDecimalToValue
+ChangingDecimal
+rotationToggle navigation of rotation
+Rotate
+Rotating
+specializedToggle navigation of specialized
+Broadcast
+speedmodifierToggle navigation of speedmodifier
+ChangeSpeed
+transformToggle navigation of transform
+ApplyComplexFunction
+ApplyFunction
+ApplyMatrix
+ApplyMethod
+ApplyPointwiseFunction
+ApplyPointwiseFunctionToCenter
+ClockwiseTransform
+CounterclockwiseTransform
+CyclicReplace
+FadeToColor
+FadeTransform
+FadeTransformPieces
+MoveToTarget
+ReplacementTransform
+Restore
+ScaleInPlace
+ShrinkToCenter
+Swap
+Transform
+TransformAnimations
+TransformFromCopy
+transform_matching_partsToggle navigation of transform_matching_parts
+TransformMatchingAbstractBase
+TransformMatchingShapes
+TransformMatchingTex
+updatersToggle navigation of updaters
+mobject_update_utils
+updateToggle navigation of update
+MaintainPositionRelativeTo
+UpdateFromAlphaFunc
+UpdateFromFunc
+CamerasToggle navigation of Cameras
+cameraToggle navigation of camera
+BackgroundColoredVMobjectDisplayer
+Camera
+mapping_cameraToggle navigation of mapping_camera
+MappingCamera
+OldMultiCamera
+SplitScreenCamera
+moving_cameraToggle navigation of moving_camera
+MovingCamera
+multi_cameraToggle navigation of multi_camera
+MultiCamera
+three_d_cameraToggle navigation of three_d_camera
+ThreeDCamera
+ConfigurationToggle navigation of Configuration
+_config
+utilsToggle navigation of utils
+ManimConfig
+ManimFrame
+logger_utilsToggle navigation of logger_utils
+JSONFormatter
+MobjectsToggle navigation of Mobjects
+frameToggle navigation of frame
+FullScreenRectangle
+ScreenRectangle
+geometryToggle navigation of geometry
+arcToggle navigation of arc
+AnnotationDot
+AnnularSector
+Annulus
+Arc
+ArcBetweenPoints
+ArcPolygon
+ArcPolygonFromArcs
+Circle
+CubicBezier
+CurvedArrow
+CurvedDoubleArrow
+Dot
+Ellipse
+LabeledDot
+Sector
+TipableVMobject
+boolean_opsToggle navigation of boolean_ops
+Difference
+Exclusion
+Intersection
+Union
+labeledToggle navigation of labeled
+Label
+LabeledArrow
+LabeledLine
+LabeledPolygram
+lineToggle navigation of line
+Angle
+Arrow
+DashedLine
+DoubleArrow
+Elbow
+Line
+RightAngle
+TangentLine
+Vector
+polygramToggle navigation of polygram
+ConvexHull
+Cutout
+Polygon
+Polygram
+Rectangle
+RegularPolygon
+RegularPolygram
+RoundedRectangle
+Square
+Star
+Triangle
+shape_matchersToggle navigation of shape_matchers
+BackgroundRectangle
+Cross
+SurroundingRectangle
+Underline
+tipsToggle navigation of tips
+ArrowCircleFilledTip
+ArrowCircleTip
+ArrowSquareFilledTip
+ArrowSquareTip
+ArrowTip
+ArrowTriangleFilledTip
+ArrowTriangleTip
+StealthTip
+graphToggle navigation of graph
+DiGraph
+GenericGraph
+Graph
+LayoutFunction
+graphingToggle navigation of graphing
+coordinate_systemsToggle navigation of coordinate_systems
+Axes
+ComplexPlane
+CoordinateSystem
+NumberPlane
+PolarPlane
+ThreeDAxes
+functionsToggle navigation of functions
+FunctionGraph
+ImplicitFunction
+ParametricFunction
+number_lineToggle navigation of number_line
+NumberLine
+UnitInterval
+probabilityToggle navigation of probability
+BarChart
+SampleSpace
+scaleToggle navigation of scale
+LinearBase
+LogBase
+logoToggle navigation of logo
+ManimBanner
+matrixToggle navigation of matrix
+DecimalMatrix
+IntegerMatrix
+Matrix
+MobjectMatrix
+mobjectToggle navigation of mobject
+Group
+Mobject
+svgToggle navigation of svg
+braceToggle navigation of brace
+ArcBrace
+Brace
+BraceBetweenPoints
+BraceLabel
+BraceText
+svg_mobjectToggle navigation of svg_mobject
+SVGMobject
+VMobjectFromSVGPath
+tableToggle navigation of table
+DecimalTable
+IntegerTable
+MathTable
+MobjectTable
+Table
+textToggle navigation of text
+code_mobjectToggle navigation of code_mobject
+Code
+numbersToggle navigation of numbers
+DecimalNumber
+Integer
+Variable
+tex_mobjectToggle navigation of tex_mobject
+BulletedList
+MathTex
+SingleStringMathTex
+Tex
+Title
+text_mobjectToggle navigation of text_mobject
+MarkupText
+Paragraph
+Text
+three_dToggle navigation of three_d
+polyhedraToggle navigation of polyhedra
+ConvexHull3D
+Dodecahedron
+Icosahedron
+Octahedron
+Polyhedron
+Tetrahedron
+three_d_utils
+three_dimensionsToggle navigation of three_dimensions
+Arrow3D
+Cone
+Cube
+Cylinder
+Dot3D
+Line3D
+Prism
+Sphere
+Surface
+ThreeDVMobject
+Torus
+typesToggle navigation of types
+image_mobjectToggle navigation of image_mobject
+AbstractImageMobject
+ImageMobject
+ImageMobjectFromCamera
+point_cloud_mobjectToggle navigation of point_cloud_mobject
+Mobject1D
+Mobject2D
+PGroup
+PMobject
+Point
+PointCloudDot
+vectorized_mobjectToggle navigation of vectorized_mobject
+CurvesAsSubmobjects
+DashedVMobject
+VDict
+VGroup
+VMobject
+VectorizedPoint
+utils
+value_trackerToggle navigation of value_tracker
+ComplexValueTracker
+ValueTracker
+vector_fieldToggle navigation of vector_field
+ArrowVectorField
+StreamLines
+VectorField
+ScenesToggle navigation of Scenes
+moving_camera_sceneToggle navigation of moving_camera_scene
+MovingCameraScene
+sectionToggle navigation of section
+DefaultSectionType
+Section
+sceneToggle navigation of scene
+RerunSceneHandler
+Scene
+scene_file_writerToggle navigation of scene_file_writer
+SceneFileWriter
+three_d_sceneToggle navigation of three_d_scene
+SpecialThreeDScene
+ThreeDScene
+vector_space_sceneToggle navigation of vector_space_scene
+LinearTransformationScene
+VectorScene
+zoomed_sceneToggle navigation of zoomed_scene
+ZoomedScene
+Utilities and other modulesToggle navigation of Utilities and other modules
+bezier
+cliToggle navigation of cli
+cfg
+checkhealth
+init
+plugins
+render
+colorToggle navigation of color
+coreToggle navigation of core
+HSV
+ManimColor
+RGBA
+manim_colors
+AS2700
+BS381
+DVIPSNAMES
+SVGNAMES
+XKCD
+X11
+commandsToggle navigation of commands
+VideoMetadata
+config_opsToggle navigation of config_ops
+DictAsObject
+constantsToggle navigation of constants
+CapStyleType
+LineJointType
+QualityDict
+RendererType
+debug
+deprecation
+docbuildToggle navigation of docbuild
+autoaliasattr_directiveToggle navigation of autoaliasattr_directive
+AliasAttrDocumenter
+autocolor_directiveToggle navigation of autocolor_directive
+ManimColorModuleDocumenter
+manim_directiveToggle navigation of manim_directive
+ManimDirective
+SetupMetadata
+SkipManimNode
+module_parsing
+hashing
+images
+ipython_magicToggle navigation of ipython_magic
+ManimMagic
+iterables
+paths
+rate_functionsToggle navigation of rate_functions
+RateFunction
+simple_functionsToggle navigation of simple_functions
+Comparable
+sounds
+space_ops
+testingToggle navigation of testing
+_frames_testers
+_show_diff
+_test_class_makersToggle navigation of _test_class_makers
+DummySceneFileWriter
+texToggle navigation of tex
+TexTemplate
+tex_file_writing
+tex_templatesToggle navigation of tex_templates
+TexFontTemplates
+TexTemplateLibrary
+typing
+Plugins
+ChangelogToggle navigation of Changelog
+v0.19.0
+v0.18.0
+v0.17.3
+v0.17.2
+v0.17.1
+v0.17.0
+v0.16.0
+v0.15.2
+v0.15.1
+v0.15.0
+v0.14.0
+v0.13.1
+v0.13.0
+v0.12.0
+v0.11.0
+v0.10.0
+v0.9.0
+v0.8.0
+v0.7.0
+v0.6.0
+v0.5.0
+v0.4.0
+v0.3.0
+v0.2.0
+v0.1.1
+v0.1.0
+ContributingToggle navigation of Contributing
+Manim Development Process
+Adding DocumentationToggle navigation of Adding Documentation
+Adding Admonitions
+Adding Docstrings
+Adding Examples
+Adding References
+Typing Conventions
+Choosing Type Hints
+Adding Tests
+Improving performance
+Internationalization
+Code of Conduct
+Back to top
+Toggle Light / Dark / Auto color theme
+Toggle table of contents sidebar
+Quickstart¶
+Note
+Before proceeding, install Manim and make sure it is running properly by
+following the steps in Installation. For
+information on using Manim with Jupyterlab or Jupyter notebook, go to the
+documentation for the
+IPython magic command,
+%%manim.
+Important
+If you installed Manim in the recommended way, using the
+Python management tool uv, then you either need to make sure the corresponding
+virtual environment is activated (follow the instructions printed on running uv venv),
+or you need to remember to prefix the manim command in the console with uv run;
+that is, uv run manim ....
+Overview¶
+This quickstart guide will lead you through creating a sample project using Manim: an animation
+engine for precise programmatic animations.
+First, you will use a command line
+interface to create a Scene, the class through which Manim generates videos.
+In the Scene you will animate a circle. Then you will add another Scene showing
+a square transforming into a circle. This will be your introduction to Manim’s animation ability.
+Afterwards, you will position multiple mathematical objects (Mobjects). Finally, you
+will learn the .animate syntax, a powerful feature that animates the methods you
+use to modify Mobjects.
+Starting a new project¶
+Start by creating a new folder:
+manim init project my-project --default
+The my-project folder is the root folder for your project. It contains all the files that Manim needs to function,
+as well as any output that your project produces.
+Animating a circle¶
+Open a text editor, such as Notepad. Open the file main.py in the my-project folder.
+It should look something like this:
+from manim import *
+class CreateCircle(Scene):
+def construct(self):
+circle = Circle()  # create a circle
+circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
+self.play(Create(circle))  # show the circle on screen
+Open the command line, navigate to your project folder, and execute
+the following command:
+manim -pql main.py CreateCircle
+Manim will output rendering information, then create an MP4 file.
+Your default movie player will play the MP4 file, displaying the following animation.
+If you see an animation of a pink circle being drawn, congratulations!
+You just wrote your first Manim scene from scratch.
+If you get an error
+message instead, you do not see a video, or if the video output does not
+look like the preceding animation, it is likely that Manim has not been
+installed correctly. Please refer to our FAQ section
+for help with the most common issues.
+Explanation¶
+Let’s go over the script you just executed line by line to see how Manim was
+able to draw the circle.
+The first line imports all of the contents of the library:
+from manim import *
+This is the recommended way of using Manim, as a single script often uses
+multiple names from the Manim namespace. In your script, you imported and used
+Scene, Circle, PINK and Create.
+Now let’s look at the next two lines:
+class CreateCircle(Scene):
+def construct(self):
+[...]
+Most of the time, the code for scripting an animation is entirely contained within
+the construct() method of a Scene class.
+Inside construct(), you can create objects, display them on screen, and animate them.
+The next two lines create a circle and set its color and opacity:
+circle = Circle()  # create a circle
+circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
+Finally, the last line uses the animation Create to display the
+circle on your screen:
+self.play(Create(circle))  # show the circle on screen
+Tip
+All animations must reside within the construct() method of a
+class derived from Scene.  Other code, such as auxiliary
+or mathematical functions, may reside outside the class.
+Transforming a square into a circle¶
+With our circle animation complete, let’s move on to something a little more complicated.
+Open scene.py, and add the following code snippet below the CreateCircle class:
+class SquareToCircle(Scene):
+def construct(self):
+circle = Circle()  # create a circle
+circle.set_fill(PINK, opacity=0.5)  # set color and transparency
+square = Square()  # create a square
+square.rotate(PI / 4)  # rotate a certain amount
+self.play(Create(square))  # animate the creation of the square
+self.play(Transform(square, circle))  # interpolate the square into the circle
+self.play(FadeOut(square))  # fade out animation
+Render SquareToCircle by running the following command in the command line:
+manim -pql scene.py SquareToCircle
+The following animation will render:
+This example shows one of the primary features of Manim: the ability to
+implement complicated and mathematically intensive animations (such as cleanly
+interpolating between two geometric shapes) with just a few lines of code.
+Positioning Mobjects¶
+Next, let’s go over some basic techniques for positioning Mobjects.
+Open scene.py, and add the following code snippet below the SquareToCircle method:
+class SquareAndCircle(Scene):
+def construct(self):
+circle = Circle()  # create a circle
+circle.set_fill(PINK, opacity=0.5)  # set the color and transparency
+square = Square()  # create a square
+square.set_fill(BLUE, opacity=0.5)  # set the color and transparency
+square.next_to(circle, RIGHT, buff=0.5)  # set the position
+self.play(Create(circle), Create(square))  # show the shapes on screen
+Render SquareAndCircle by running the following command in the command line:
+manim -pql scene.py SquareAndCircle
+The following animation will render:
+next_to is a Mobject method for positioning Mobjects.
+We first specified
+the pink circle as the square’s reference point by passing circle as the method’s first argument.
+The second argument is used to specify the direction the Mobject is placed relative to the reference point.
+In this case, we set the direction to RIGHT, telling Manim to position the square to the right of the circle.
+Finally, buff=0.5 applied a small distance buffer between the two objects.
+Try changing RIGHT to LEFT, UP, or DOWN instead, and see how that changes the position of the square.
+Using positioning methods, you can render a scene with multiple Mobjects,
+setting their locations in the scene using coordinates or positioning them
+relative to each other.
+For more information on next_to and other positioning methods, check out the
+list of Mobject methods in our reference manual.
+Using .animate syntax to animate methods¶
+The final lesson in this tutorial is using .animate, a Mobject method which
+animates changes you make to a Mobject. When you prepend .animate to any
+method call that modifies a Mobject, the method becomes an animation which
+can be played using self.play. Let’s return to SquareToCircle to see the
+differences between using methods when creating a Mobject,
+and animating those method calls with .animate.
+Open scene.py, and add the following code snippet below the SquareAndCircle class:
+class AnimatedSquareToCircle(Scene):
+def construct(self):
+circle = Circle()  # create a circle
+square = Square()  # create a square
+self.play(Create(square))  # show the square on screen
+self.play(square.animate.rotate(PI / 4))  # rotate the square
+self.play(Transform(square, circle))  # transform the square into a circle
+self.play(
+square.animate.set_fill(PINK, opacity=0.5)
+)  # color the circle on screen
+Render AnimatedSquareToCircle by running the following command in the command line:
+manim -pql scene.py AnimatedSquareToCircle
+The following animation will render:
+The first self.play creates the square. The second animates rotating it 45 degrees.
+The third transforms the square into a circle, and the last colors the circle pink.
+Although the end result is the same as that of SquareToCircle, .animate shows
+rotate and set_fill being applied to the Mobject dynamically, instead of creating them
+with the changes already applied.
+Try other methods, like flip or shift, and see what happens.
+Open scene.py, and add the following code snippet below the AnimatedSquareToCircle class:
+class DifferentRotations(Scene):
+def construct(self):
+left_square = Square(color=BLUE, fill_opacity=0.7).shift(2 * LEFT)
+right_square = Square(color=GREEN, fill_opacity=0.7).shift(2 * RIGHT)
+self.play(
+left_square.animate.rotate(PI), Rotate(right_square, angle=PI), run_time=2
+)
+self.wait()
+Render DifferentRotations by running the following command in the command line:
+manim -pql scene.py DifferentRotations
+The following animation will render:
+This Scene illustrates the quirks of .animate. When using .animate, Manim
+actually takes a Mobject’s starting state and its ending state and interpolates the two.
+In the AnimatedSquareToCircle class, you can observe this when the square rotates:
+the corners of the square appear to contract slightly as they move into the positions required
+for the first square to transform into the second one.
+In DifferentRotations, the difference between .animate’s interpretation of rotation and the
+Rotate method is far more apparent. The starting and ending states of a Mobject rotated 180 degrees
+are the same, so .animate tries to interpolate two identical objects and the result is the left square.
+If you find that your own usage of .animate is causing similar unwanted behavior, consider
+using conventional animation methods like the right square, which uses Rotate.
+Transform vs ReplacementTransform¶
+The difference between Transform and ReplacementTransform is that Transform(mob1, mob2) transforms the points
+(as well as other attributes like color) of mob1 into the points/attributes of mob2.
+ReplacementTransform(mob1, mob2) on the other hand literally replaces mob1 on the scene with mob2.
+The use of ReplacementTransform or Transform is mostly up to personal preference. They can be used to accomplish the same effect, as shown below.
+class TwoTransforms(Scene):
+def transform(self):
+a = Circle()
+b = Square()
+c = Triangle()
+self.play(Transform(a, b))
+self.play(Transform(a, c))
+self.play(FadeOut(a))
+def replacement_transform(self):
+a = Circle()
+b = Square()
+c = Triangle()
+self.play(ReplacementTransform(a, b))
+self.play(ReplacementTransform(b, c))
+self.play(FadeOut(c))
+def construct(self):
+self.transform()
+self.wait(0.5)  # wait for 0.5 seconds
+self.replacement_transform()
+However, in some cases it is more beneficial to use Transform, like when you are transforming several mobjects one after the other.
+The code below avoids having to keep a reference to the last mobject that was transformed.
+Example: TransformCycle ¶
+from manim import *
+class TransformCycle(Scene):
+def construct(self):
+a = Circle()
+t1 = Square()
+t2 = Triangle()
+self.add(a)
+self.wait()
+for t in [t1,t2]:
+self.play(Transform(a,t))
+class TransformCycle(Scene):
+def construct(self):
+a = Circle()
+t1 = Square()
+t2 = Triangle()
+self.add(a)
+self.wait()
+for t in [t1,t2]:
+self.play(Transform(a,t))
+You’re done!¶
+With a working installation of Manim and this sample project under your belt,
+you’re ready to start creating animations of your own.  To learn
+more about what Manim is doing under the hood, move on to the next tutorial:
+Manim’s Output Settings.  For an overview of
+Manim’s features, as well as its configuration and other settings, check out the
+other Tutorials.  For a list of all available features, refer to the
+Reference Manual page.
+On this page
+Quickstart
+Overview
+Starting a new project
+Animating a circle
+Explanation
+Transforming a square into a circle
+Positioning Mobjects
+Using .animate syntax to animate methods
+Transform vs ReplacementTransform
+You’re done!

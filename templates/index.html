@@ -1,109 +1,184 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <!-- Hero Section -->
-    <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            <span class="gradient-text">Create Beautiful Mathematical Animations</span>
-        </h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Transform your mathematical concepts into stunning animations using AI and Manim.
-            Just describe what you want to visualize, and we'll generate the code and animation for you.
-        </p>
+    <div class="text-center mb-24 relative">
+        <!-- Main Title with Typing Effect -->
+        <div class="mb-8">
+            <h1 class="text-6xl md:text-8xl font-bold title-font mb-6">
+                <span class="gradient-text typing-title">MathsGPT</span>
+            </h1>
+            <div class="flex justify-center items-center space-x-4 mb-6">
+                <div class="h-px w-20 bg-gradient-to-r from-transparent to-cyan-400"></div>
+                <div class="text-cyan-400 text-xl title-font tracking-[0.3em]">AI POWERED</div>
+                <div class="h-px w-20 bg-gradient-to-l from-transparent to-cyan-400"></div>
+            </div>
+            <p class="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Generate <span class="text-cyan-400 font-semibold">original 60+ second educational animations</span> 
+                using AI that creates completely custom Manim scripts from comprehensive documentation
+            </p>
+        </div>
+
+        <!-- Feature Highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="glass-card rounded-xl p-6 float-animation">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+                    <i class="fas fa-robot text-2xl text-black"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-cyan-400">Original AI Scripts</h3>
+                <p class="text-gray-300">AI generates completely original Manim code from scratch using comprehensive documentation</p>
+            </div>
+            <div class="glass-card rounded-xl p-6 float-animation" style="animation-delay: 0.5s;">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                    <i class="fas fa-play text-2xl text-black"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-purple-400">60+ Second Videos</h3>
+                <p class="text-gray-300">Creates comprehensive educational content with 6-8 phases of detailed explanations</p>
+            </div>
+            <div class="glass-card rounded-xl p-6 float-animation" style="animation-delay: 1s;">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
+                    <i class="fas fa-code text-2xl text-black"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-green-400">Code Generation</h3>
+                <p class="text-gray-300">Get clean, optimized Manim code that you can customize and reuse</p>
+            </div>
+        </div>
     </div>
 
     <!-- Main Input Form -->
-    <div class="max-w-4xl mx-auto">
-        <div class="glass-card rounded-xl p-6 mb-8">
-            <form id="generationForm" class="space-y-6">
+    <div class="max-w-5xl mx-auto mb-20">
+        <div class="glass-card rounded-2xl p-8 neon-border">
+            <form id="generationForm" class="space-y-8">
                 <!-- Text Input -->
                 <div>
-                    <label for="concept" class="block text-sm font-medium text-gray-300 mb-2">Describe Your Animation</label>
-                    <textarea id="concept" name="concept" rows="4" class="w-full px-4 py-3 bg-indigo-900 bg-opacity-50 border border-indigo-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all" placeholder="Example: Visualize the relationship between sine and cosine on the unit circle..."></textarea>
+                    <label for="concept" class="block text-lg font-medium text-cyan-400 mb-4 title-font">
+                        <i class="fas fa-brain mr-2"></i>DESCRIBE YOUR MATHEMATICAL CONCEPT
+                    </label>
+                    <textarea id="concept" name="concept" rows="6" 
+                              class="w-full px-6 py-4 futuristic-input rounded-xl text-white placeholder-gray-400 text-lg code-font resize-none"
+                              placeholder="Example: Create a 3D visualization of the relationship between sine and cosine functions on a rotating unit circle with animated vectors showing the projection..."></textarea>
                 </div>
 
-                <!-- Example Concepts -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-2">Try These Examples</label>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                        <button type="button" onclick="setExample('Demonstrate the Pythagorean theorem with animated triangle and squares')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Pythagorean Theorem
+                <!-- AI Suggestions -->
+                <div class="bg-black bg-opacity-50 rounded-xl p-6 border border-cyan-400 border-opacity-30">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                        <span class="text-yellow-400 font-medium title-font">AI SUGGESTIONS</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <button type="button" onclick="setExample('Create a dynamic visualization of the Pythagorean theorem with animated squares growing on each side of a right triangle')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-square-root-alt mr-2"></i>Pythagorean Theorem
                         </button>
-                        <button type="button" onclick="setExample('Visualize a quadratic function and its properties with animation')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Quadratic Function
+                        <button type="button" onclick="setExample('Visualize a 3D surface plot of z = sin(x)cos(y) with rotating camera and color gradients')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-cube mr-2"></i>3D Surface Plot
                         </button>
-                        <button type="button" onclick="setExample('Show how sine and cosine are related on the unit circle with animated angle')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Trigonometry
+                        <button type="button" onclick="setExample('Show the relationship between sine and cosine on the unit circle with animated angle and projections')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-circle mr-2"></i>Trigonometry
                         </button>
-                        <button type="button" onclick="setExample('Create a 3D surface plot showing z = x^2 + y^2')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            3D Surface Plot
+                        <button type="button" onclick="setExample('Demonstrate derivatives as the slope of tangent lines with animated point moving along a curve')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-chart-line mr-2"></i>Derivatives
                         </button>
-                        <button type="button" onclick="setExample('Calculate and visualize the volume of a sphere with radius r')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Sphere Volume
+                        <button type="button" onclick="setExample('Visualize integration as animated area under a curve being filled gradually')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-area-chart mr-2"></i>Integration
                         </button>
-                        <button type="button" onclick="setExample('Show how to find the surface area of a cube with animations')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Cube Surface Area
+                        <button type="button" onclick="setExample('Create a matrix transformation animation showing how matrices transform geometric shapes')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-th mr-2"></i>Matrix Operations
                         </button>
-                        <button type="button" onclick="setExample('Visualize derivatives as the slope of a tangent line')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Derivatives
+                        <button type="button" onclick="setExample('Show complex number multiplication as rotation and scaling in the complex plane')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-compass mr-2"></i>Complex Numbers
                         </button>
-                        <button type="button" onclick="setExample('Show how integration works with animated area under a curve')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Integration
+                        <button type="button" onclick="setExample('Animate the solution of a differential equation showing slope fields and solution curves')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-project-diagram mr-2"></i>Differential Equations
                         </button>
-                        <button type="button" onclick="setExample('Demonstrate matrix operations with animated transformations')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Matrix Operations
-                        </button>
-                        <button type="button" onclick="setExample('Visualize eigenvalues and eigenvectors of a 2x2 matrix')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Eigenvalues
-                        </button>
-                        <button type="button" onclick="setExample('Show how complex numbers multiply using rotation and scaling')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Complex Numbers
-                        </button>
-                        <button type="button" onclick="setExample('Animate solutions to a simple differential equation')" class="px-3 py-2 text-sm bg-indigo-900 bg-opacity-50 hover:bg-opacity-75 rounded-lg text-white transition-all">
-                            Differential Equations
+                        <button type="button" onclick="setExample('Visualize eigenvalues and eigenvectors of a 2x2 matrix with animated transformations')" 
+                                class="example-btn px-4 py-3 text-sm rounded-lg transition-all duration-300">
+                            <i class="fas fa-vector-square mr-2"></i>Eigenvalues
                         </button>
                     </div>
                 </div>
 
                 <!-- Generate Button -->
-                <div class="flex justify-center">
-                    <button type="submit" class="gradient-button px-8 py-3 rounded-lg text-white font-medium text-lg shadow-lg flex items-center space-x-2">
-                        <span>Generate Animation</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                <div class="flex justify-center space-x-4">
+                    <button type="submit" class="holo-btn px-12 py-4 rounded-xl text-xl font-bold flex items-center space-x-3 shadow-2xl">
+                        <i class="fas fa-brain"></i>
+                        <span>GENERATE ORIGINAL AI ANIMATION</span>
+                        <i class="fas fa-robot"></i>
+                    </button>
+                    <a href="/chat" class="example-btn px-8 py-4 rounded-xl text-xl font-bold flex items-center space-x-3 shadow-2xl">
+                        <i class="fas fa-comments"></i>
+                        <span>CHAT WITH AI</span>
+                    </a>
+                </div>
+                
+                <!-- Info about AI Generation -->
+                <div class="text-center text-gray-400 text-sm">
+                    <p><i class="fas fa-info-circle mr-1"></i>
+                    AI generates completely original 60-90 second educational animations using comprehensive Manim documentation</p>
+                </div>
+                
+                <!-- Documentation Update Button -->
+                <div class="flex justify-center mt-4">
+                    <button type="button" id="updateDocsBtn" class="example-btn px-6 py-2 rounded-lg text-sm font-semibold flex items-center space-x-2">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>UPDATE MANIM DOCS</span>
                     </button>
                 </div>
             </form>
         </div>
+    </div>
 
         <!-- Results Section -->
         <div id="results" class="space-y-8 hidden">
+            <!-- Success Message -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center space-x-3 glass-card px-6 py-3 rounded-full">
+                    <i class="fas fa-check-circle text-green-400 text-xl"></i>
+                    <span class="text-green-400 font-semibold title-font">ANIMATION GENERATED SUCCESSFULLY</span>
+                </div>
+            </div>
+
             <!-- Code and Animation Container -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Generated Code -->
-                <div class="glass-card rounded-xl p-6 h-[400px] flex flex-col">
+                <div class="glass-card rounded-2xl p-6 h-[500px] flex flex-col">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-semibold">Generated Manim Code</h3>
-                        <button id="copyCode" class="text-indigo-400 hover:text-indigo-300 flex items-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                            </svg>
-                            <span>Copy Code</span>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-code text-cyan-400 text-xl"></i>
+                            <h3 class="text-xl font-semibold title-font text-cyan-400">GENERATED MANIM CODE</h3>
+                        </div>
+                        <button id="copyCode" class="text-cyan-400 hover:text-white flex items-center space-x-2 holo-btn px-4 py-2 rounded-lg text-sm transition-all duration-300">
+                            <i class="fas fa-copy"></i>
+                            <span>COPY</span>
                         </button>
                     </div>
-                    <div class="flex-1 overflow-auto">
-                        <pre class="h-full"><code class="language-python" id="generatedCode">
-# Your generated code will appear here
-                        </code></pre>
+                    <div class="flex-1 overflow-auto terminal">
+                        <div class="terminal-header">
+                            <i class="fas fa-terminal mr-2"></i>MathsGPT Code Generator v2.0
+                        </div>
+                        <div class="p-4">
+                            <pre class="h-full text-sm"><code class="language-python code-font" id="generatedCode">
+# Your generated code will appear here...
+                            </code></pre>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Animation Preview -->
-                <div class="glass-card rounded-xl p-6 h-[400px] flex flex-col">
-                    <h3 class="text-lg font-semibold mb-4">Animation Preview</h3>
-                    <div class="flex-1 bg-black rounded-lg overflow-hidden">
+                <div class="glass-card rounded-2xl p-6 h-[500px] flex flex-col">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-play-circle text-purple-400 text-xl"></i>
+                        <h3 class="text-xl font-semibold title-font text-purple-400">ANIMATION PREVIEW</h3>
+                    </div>
+                    <div class="flex-1 bg-black rounded-xl overflow-hidden holo-video">
                         <video id="animationPreview" class="w-full h-full object-contain" controls>
                             Your browser does not support the video tag.
                         </video>
@@ -111,88 +186,243 @@
                 </div>
             </div>
 
-            <!-- Download Section -->
-            <div class="flex justify-center space-x-4">
-                <a id="downloadVideo" href="#" class="gradient-button px-6 py-2 rounded-lg text-white font-medium flex items-center space-x-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    <span>Download MP4</span>
+            <!-- Download and Share Section -->
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a id="downloadVideo" href="#" class="holo-btn px-8 py-3 rounded-xl font-semibold flex items-center space-x-3">
+                    <i class="fas fa-download"></i>
+                    <span>DOWNLOAD MP4</span>
                 </a>
+                <button id="shareAnimation" class="example-btn px-8 py-3 rounded-xl font-semibold flex items-center space-x-3">
+                    <i class="fas fa-share-alt"></i>
+                    <span>SHARE ANIMATION</span>
+                </button>
+                <button id="generateNew" class="example-btn px-8 py-3 rounded-xl font-semibold flex items-center space-x-3">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>CREATE NEW</span>
+                </button>
             </div>
         </div>
 
         <!-- Loading State -->
         <div id="loading" class="hidden">
-            <div class="flex flex-col items-center justify-center py-12">
-                <div class="loading-spinner mb-4"></div>
-                <p class="text-lg text-gray-300" id="loadingText">Generating your animation...</p>
-                <p class="text-sm text-gray-400 mt-2">This may take a few moments</p>
+            <div class="flex flex-col items-center justify-center py-20">
+                <div class="relative mb-8">
+                    <div class="loading-spinner"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-brain text-cyan-400 text-xl animate-pulse"></i>
+                    </div>
+                </div>
+                
+                <div class="text-center space-y-4">
+                    <h3 class="text-2xl font-bold title-font neon-text" id="loadingTitle">PROCESSING YOUR REQUEST</h3>
+                    <p class="text-lg text-gray-300" id="loadingText">AI is analyzing your mathematical concept...</p>
+                    <div class="flex justify-center space-x-2">
+                        <div class="pulse-dot"></div>
+                        <div class="pulse-dot" style="animation-delay: 0.2s;"></div>
+                        <div class="pulse-dot" style="animation-delay: 0.4s;"></div>
+                    </div>
+                </div>
+
+                <!-- Loading Progress Stages -->
+                <div class="mt-12 w-full max-w-md">
+                    <div class="space-y-3" id="loadingStages">
+                        <div class="flex items-center space-x-3" id="stage1">
+                            <div class="w-4 h-4 rounded-full border-2 border-cyan-400"></div>
+                            <span class="text-gray-400">Analyzing mathematical concept</span>
+                        </div>
+                        <div class="flex items-center space-x-3" id="stage2">
+                            <div class="w-4 h-4 rounded-full border-2 border-gray-600"></div>
+                            <span class="text-gray-600">Generating Manim code</span>
+                        </div>
+                        <div class="flex items-center space-x-3" id="stage3">
+                            <div class="w-4 h-4 rounded-full border-2 border-gray-600"></div>
+                            <span class="text-gray-600">Rendering animation</span>
+                        </div>
+                        <div class="flex items-center space-x-3" id="stage4">
+                            <div class="w-4 h-4 rounded-full border-2 border-gray-600"></div>
+                            <span class="text-gray-600">Finalizing output</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Error State -->
         <div id="error" class="hidden">
-            <div class="glass-card rounded-xl p-6 border border-red-500">
-                <div class="flex items-center space-x-3 text-red-400">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <h3 class="text-lg font-medium">Error</h3>
+            <div class="glass-card rounded-2xl p-8 border-2 border-red-500">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-red-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold title-font text-red-400 mb-4">GENERATION FAILED</h3>
+                    <p class="text-gray-300 mb-6" id="errorMessage">Something went wrong. Please try again.</p>
+                    <button onclick="resetForm()" class="holo-btn px-8 py-3 rounded-xl font-semibold">
+                        <i class="fas fa-redo mr-2"></i>TRY AGAIN
+                    </button>
                 </div>
-                <p class="mt-2 text-gray-300" id="errorMessage">Something went wrong. Please try again.</p>
             </div>
         </div>
     </div>
 
     <!-- Example Showcase -->
-    <div class="mt-24">
-        <h2 class="text-3xl font-bold text-center mb-12">
-            <span class="gradient-text">Example Animations</span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Trigonometry -->
-            <div class="glass-card rounded-xl p-6">
-                <h3 class="text-lg font-semibold mb-4">Trigonometry</h3>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4 bg-indigo-900 bg-opacity-50">
-                    <div class="flex items-center justify-center">
-                        <img src="{{ url_for('static', filename='gifs/differential_equations.gif') }}" alt="Trigonometry" class="w-full h-full object-contain">
+    <div class="mt-32" id="examples">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold title-font mb-6">
+                <span class="gradient-text">FEATURED ANIMATIONS</span>
+            </h2>
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <div class="h-px w-20 bg-gradient-to-r from-transparent to-cyan-400"></div>
+                <div class="text-cyan-400 title-font tracking-[0.2em]">SHOWCASE</div>
+                <div class="h-px w-20 bg-gradient-to-l from-transparent to-cyan-400"></div>
+            </div>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore these stunning mathematical animations created with MathsGPT
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Trigonometry Example -->
+            <div class="glass-card rounded-2xl p-6 float-animation">
+                <div class="relative mb-6 rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='gifs/TrigonometryAnimation_ManimCE_v0.17.3.gif') }}" 
+                             alt="Trigonometry Animation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-cyan-400 text-black px-3 py-1 rounded-full text-xs font-bold">TRIGONOMETRY</span>
                     </div>
                 </div>
-                <p class="text-gray-300">Visualization of sine and cosine functions on the unit circle with animated angle.</p>
+                <h3 class="text-xl font-semibold mb-3 text-cyan-400 title-font">UNIT CIRCLE DYNAMICS</h3>
+                <p class="text-gray-300 mb-4">Interactive visualization of sine and cosine relationships on the unit circle with animated projections and real-time value tracking.</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-500 bg-opacity-20 text-blue-400 px-2 py-1 rounded text-xs">2D</span>
+                        <span class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs">ANIMATED</span>
+                    </div>
+                    <button class="text-cyan-400 hover:text-white transition-colors">
+                        <i class="fas fa-play-circle text-xl"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Calculus -->
-            <div class="glass-card rounded-xl p-6">
-                <h3 class="text-lg font-semibold mb-4">3D Surface Plot</h3>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4 bg-indigo-900 bg-opacity-50">
-                    <div class="flex items-center justify-center">
-                        <img src="{{ url_for('static', filename='gifs/3d_calculus.gif') }}" alt="3d Surface Plot" class="w-full h-full object-contain">
+            <!-- 3D Calculus Example -->
+            <div class="glass-card rounded-2xl p-6 float-animation" style="animation-delay: 0.2s;">
+                <div class="relative mb-6 rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-purple-900 to-pink-900 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='gifs/3d_calculus.gif') }}" 
+                             alt="3D Calculus Animation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-purple-400 text-black px-3 py-1 rounded-full text-xs font-bold">3D CALCULUS</span>
                     </div>
                 </div>
-                <p class="text-gray-300">3D visualization of the surface area of a cube with animations.</p>
+                <h3 class="text-xl font-semibold mb-3 text-purple-400 title-font">SURFACE MATHEMATICS</h3>
+                <p class="text-gray-300 mb-4">Advanced 3D surface plotting with dynamic camera movement, gradient coloring, and mathematical function visualization.</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="bg-purple-500 bg-opacity-20 text-purple-400 px-2 py-1 rounded text-xs">3D</span>
+                        <span class="bg-pink-500 bg-opacity-20 text-pink-400 px-2 py-1 rounded text-xs">INTERACTIVE</span>
+                    </div>
+                    <button class="text-purple-400 hover:text-white transition-colors">
+                        <i class="fas fa-play-circle text-xl"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Complex Numbers -->
-            <div class="glass-card rounded-xl p-6">
-                <h3 class="text-lg font-semibold mb-4">Complex Numbers</h3>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4 bg-indigo-900 bg-opacity-50">
-                    <div class="flex items-center justify-center">
-                        <img src="{{ url_for('static', filename='gifs/ComplexNumbersAnimation_ManimCE_v0.17.3.gif') }}" alt="Complex Numbers" class="w-full h-full object-contain">
+            <!-- Complex Numbers Example -->
+            <div class="glass-card rounded-2xl p-6 float-animation" style="animation-delay: 0.4s;">
+                <div class="relative mb-6 rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-green-900 to-teal-900 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='gifs/ComplexNumbersAnimation_ManimCE_v0.17.3.gif') }}" 
+                             alt="Complex Numbers Animation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-green-400 text-black px-3 py-1 rounded-full text-xs font-bold">COMPLEX</span>
                     </div>
                 </div>
-                <p class="text-gray-300">Geometric interpretation of complex number operations with rotation and scaling.</p>
+                <h3 class="text-xl font-semibold mb-3 text-green-400 title-font">COMPLEX PLANE OPERATIONS</h3>
+                <p class="text-gray-300 mb-4">Geometric interpretation of complex number operations with rotation, scaling, and vector transformations in the complex plane.</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="bg-green-500 bg-opacity-20 text-green-400 px-2 py-1 rounded text-xs">VECTORS</span>
+                        <span class="bg-teal-500 bg-opacity-20 text-teal-400 px-2 py-1 rounded text-xs">ROTATION</span>
+                    </div>
+                    <button class="text-green-400 hover:text-white transition-colors">
+                        <i class="fas fa-play-circle text-xl"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Linear Algebra -->
-            <div class="glass-card rounded-xl p-6">
-                <h3 class="text-lg font-semibold mb-4">Linear Algebra</h3>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4 bg-indigo-900 bg-opacity-50">
-                    <div class="flex items-center justify-center">
-                        <img src="{{ url_for('static', filename='gifs/TrigonometryAnimation_ManimCE_v0.17.3.gif') }}" alt="Differetial Equations" class="w-full h-full object-contain">
+            <!-- Linear Algebra Example -->
+            <div class="glass-card rounded-2xl p-6 float-animation" style="animation-delay: 0.6s;">
+                <div class="relative mb-6 rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-red-900 to-orange-900 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='gifs/linear_algebra.gif') }}" 
+                             alt="Linear Algebra Animation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-red-400 text-black px-3 py-1 rounded-full text-xs font-bold">LINEAR ALGEBRA</span>
                     </div>
                 </div>
-                <p class="text-gray-300">Differential equations to life by visualizing solution curves and phase spaces.</p>
+                <h3 class="text-xl font-semibold mb-3 text-red-400 title-font">MATRIX TRANSFORMATIONS</h3>
+                <p class="text-gray-300 mb-4">Dynamic visualization of linear transformations, eigenvalues, and vector space operations with real-time matrix manipulation.</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="bg-red-500 bg-opacity-20 text-red-400 px-2 py-1 rounded text-xs">MATRIX</span>
+                        <span class="bg-orange-500 bg-opacity-20 text-orange-400 px-2 py-1 rounded text-xs">TRANSFORM</span>
+                    </div>
+                    <button class="text-red-400 hover:text-white transition-colors">
+                        <i class="fas fa-play-circle text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Differential Equations Example -->
+            <div class="glass-card rounded-2xl p-6 float-animation" style="animation-delay: 0.8s;">
+                <div class="relative mb-6 rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-yellow-900 to-amber-900 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='gifs/differential_equations.gif') }}" 
+                             alt="Differential Equations Animation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold">DIFF EQ</span>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-yellow-400 title-font">DIFFERENTIAL DYNAMICS</h3>
+                <p class="text-gray-300 mb-4">Advanced differential equation solving with slope fields, solution curves, and phase space visualization techniques.</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="bg-yellow-500 bg-opacity-20 text-yellow-400 px-2 py-1 rounded text-xs">SLOPES</span>
+                        <span class="bg-amber-500 bg-opacity-20 text-amber-400 px-2 py-1 rounded text-xs">CURVES</span>
+                    </div>
+                    <button class="text-yellow-400 hover:text-white transition-colors">
+                        <i class="fas fa-play-circle text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Calculus Example -->
+            <div class="glass-card rounded-2xl p-6 float-animation" style="animation-delay: 1s;">
+                <div class="relative mb-6 rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-indigo-900 to-blue-900 flex items-center justify-center">
+                        <img src="{{ url_for('static', filename='gifs/calculus.gif') }}" 
+                             alt="Calculus Animation" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-indigo-400 text-black px-3 py-1 rounded-full text-xs font-bold">CALCULUS</span>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-indigo-400 title-font">INTEGRATION VISUALIZATION</h3>
+                <p class="text-gray-300 mb-4">Step-by-step integration process with animated area calculation, Riemann sums, and limit approximations.</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="bg-indigo-500 bg-opacity-20 text-indigo-400 px-2 py-1 rounded text-xs">AREA</span>
+                        <span class="bg-blue-500 bg-opacity-20 text-blue-400 px-2 py-1 rounded text-xs">LIMITS</span>
+                    </div>
+                    <button class="text-indigo-400 hover:text-white transition-colors">
+                        <i class="fas fa-play-circle text-xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -201,6 +431,7 @@
 
 {% block scripts %}
 <script>
+    // Enhanced form submission with loading stages
     document.getElementById('generationForm').addEventListener('submit', async function(e) {
         e.preventDefault();
 
@@ -210,7 +441,8 @@
             return;
         }
 
-        // Show loading state
+        // Show loading state with stages
+        showLoadingStages();
         document.getElementById('loading').classList.remove('hidden');
         document.getElementById('results').classList.add('hidden');
         document.getElementById('error').classList.add('hidden');
@@ -237,9 +469,20 @@
             document.getElementById('animationPreview').src = data.video_url;
             document.getElementById('downloadVideo').href = data.video_url;
 
-            // Show results
-            document.getElementById('results').classList.remove('hidden');
-            Prism.highlightAll();
+            // Show results with animation
+            setTimeout(() => {
+                document.getElementById('results').classList.remove('hidden');
+                document.getElementById('results').style.opacity = '0';
+                document.getElementById('results').style.transform = 'translateY(20px)';
+                
+                requestAnimationFrame(() => {
+                    document.getElementById('results').style.transition = 'all 0.5s ease';
+                    document.getElementById('results').style.opacity = '1';
+                    document.getElementById('results').style.transform = 'translateY(0)';
+                });
+                
+                Prism.highlightAll();
+            }, 500);
 
         } catch (error) {
             showError(error.message || 'Something went wrong. Please try again.');
@@ -248,25 +491,270 @@
         }
     });
 
+    // Enhanced loading stages animation
+    function showLoadingStages() {
+        const stages = [
+            { id: 'stage1', text: 'Analyzing mathematical concept', delay: 0 },
+            { id: 'stage2', text: 'Generating Manim code', delay: 2000 },
+            { id: 'stage3', text: 'Rendering animation', delay: 4000 },
+            { id: 'stage4', text: 'Finalizing output', delay: 6000 }
+        ];
+
+        const loadingTexts = [
+            'AI is analyzing your mathematical concept...',
+            'Generating optimal Manim code...',
+            'Rendering high-quality animation...',
+            'Processing final output...'
+        ];
+
+        stages.forEach((stage, index) => {
+            setTimeout(() => {
+                // Complete previous stage
+                if (index > 0) {
+                    const prevStage = document.getElementById(stages[index - 1].id);
+                    const prevDot = prevStage.querySelector('.w-4');
+                    prevDot.classList.remove('border-cyan-400');
+                    prevDot.classList.add('bg-cyan-400', 'border-cyan-400');
+                    prevStage.querySelector('span').classList.remove('text-gray-600');
+                    prevStage.querySelector('span').classList.add('text-cyan-400');
+                }
+
+                // Activate current stage
+                const currentStage = document.getElementById(stage.id);
+                const currentDot = currentStage.querySelector('.w-4');
+                currentDot.classList.remove('border-gray-600');
+                currentDot.classList.add('border-cyan-400', 'animate-pulse');
+                currentStage.querySelector('span').classList.remove('text-gray-600');
+                currentStage.querySelector('span').classList.add('text-gray-400');
+
+                // Update loading text
+                document.getElementById('loadingText').textContent = loadingTexts[index];
+
+            }, stage.delay);
+        });
+    }
+
+    // Enhanced error display
     function showError(message) {
         const errorDiv = document.getElementById('error');
         document.getElementById('errorMessage').textContent = message;
         errorDiv.classList.remove('hidden');
+        
+        // Add shake animation
+        errorDiv.style.animation = 'shake 0.5s ease-in-out';
+        setTimeout(() => {
+            errorDiv.style.animation = '';
+        }, 500);
     }
 
+    // Set example function with typing effect
     function setExample(text) {
-        document.getElementById('concept').value = text;
+        const textarea = document.getElementById('concept');
+        textarea.value = '';
+        
+        let i = 0;
+        const typeInterval = setInterval(() => {
+            textarea.value += text.charAt(i);
+            i++;
+            if (i >= text.length) {
+                clearInterval(typeInterval);
+                textarea.focus();
+            }
+        }, 30);
     }
 
+    // Enhanced copy code functionality
     const copyCodeBtn = document.getElementById('copyCode');
     copyCodeBtn.addEventListener('click', function() {
-        navigator.clipboard.writeText(document.getElementById('generatedCode').textContent).then(() => {
-            const originalText = this.innerHTML;
-            this.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Copied!</span>';
+        const code = document.getElementById('generatedCode').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i><span>COPIED!</span>';
+            this.classList.add('bg-green-500');
+            
             setTimeout(() => {
-                this.innerHTML = originalText;
+                this.innerHTML = originalHTML;
+                this.classList.remove('bg-green-500');
+            }, 2000);
+        }).catch(() => {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i><span>COPIED!</span>';
+            setTimeout(() => {
+                this.innerHTML = originalHTML;
             }, 2000);
         });
+    });
+
+    // Reset form function
+    function resetForm() {
+        document.getElementById('concept').value = '';
+        document.getElementById('results').classList.add('hidden');
+        document.getElementById('error').classList.add('hidden');
+        document.getElementById('loading').classList.add('hidden');
+        
+        // Reset loading stages
+        const stages = ['stage1', 'stage2', 'stage3', 'stage4'];
+        stages.forEach(stageId => {
+            const stage = document.getElementById(stageId);
+            const dot = stage.querySelector('.w-4');
+            const span = stage.querySelector('span');
+            
+            dot.className = 'w-4 h-4 rounded-full border-2 border-gray-600';
+            span.className = 'text-gray-600';
+        });
+        
+        document.getElementById('concept').focus();
+    }
+
+    // Share animation functionality
+    document.getElementById('shareAnimation').addEventListener('click', function() {
+        const videoUrl = document.getElementById('downloadVideo').href;
+        if (navigator.share) {
+            navigator.share({
+                title: 'MathsGPT Animation',
+                text: 'Check out this amazing mathematical animation created with MathsGPT!',
+                url: videoUrl
+            });
+        } else {
+            // Fallback: copy URL to clipboard
+            navigator.clipboard.writeText(videoUrl).then(() => {
+                this.innerHTML = '<i class="fas fa-check"></i><span>URL COPIED!</span>';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-share-alt"></i><span>SHARE ANIMATION</span>';
+                }, 2000);
+            });
+        }
+    });
+
+    // Generate new animation
+    document.getElementById('generateNew').addEventListener('click', function() {
+        resetForm();
+        document.getElementById('concept').focus();
+        
+        // Smooth scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Update documentation button
+    document.getElementById('updateDocsBtn').addEventListener('click', async function() {
+        const btn = this;
+        const originalHTML = btn.innerHTML;
+        
+        // Show loading state
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>UPDATING...</span>';
+        btn.disabled = true;
+        
+        try {
+            const response = await fetch('/update-docs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok) {
+                // Show success
+                btn.innerHTML = '<i class="fas fa-check"></i><span>UPDATED!</span>';
+                btn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('bg-green-500');
+                    btn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error(data.error || 'Failed to update documentation');
+            }
+            
+        } catch (error) {
+            // Show error
+            btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>ERROR</span>';
+            btn.classList.add('bg-red-500');
+            
+            console.error('Documentation update failed:', error);
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.classList.remove('bg-red-500');
+                btn.disabled = false;
+            }, 3000);
+        }
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Ctrl+Enter to submit form
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('generationForm').dispatchEvent(new Event('submit'));
+        }
+        
+        // Escape to reset form
+        if (e.key === 'Escape') {
+            resetForm();
+        }
+    });
+
+    // Auto-resize textarea
+    const textarea = document.getElementById('concept');
+    textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+
+    // Add placeholder animation
+    function animatePlaceholder() {
+        const placeholders = [
+            "Create a 3D visualization of the relationship between sine and cosine functions...",
+            "Animate the process of finding derivatives using the limit definition...",
+            "Show how matrix multiplication transforms geometric shapes in 2D space...",
+            "Visualize the complex plane with animated complex number operations...",
+            "Demonstrate integration as the area under a curve with Riemann sums...",
+            "Create a dynamic visualization of eigenvalues and eigenvectors..."
+        ];
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            if (textarea.value === '' && document.activeElement !== textarea) {
+                currentIndex = (currentIndex + 1) % placeholders.length;
+                textarea.placeholder = placeholders[currentIndex];
+            }
+        }, 4000);
+    }
+
+    // Initialize placeholder animation
+    animatePlaceholder();
+
+    // Add CSS keyframes for shake animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize focus on textarea
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.getElementById('concept').focus();
+        }, 1000);
     });
 </script>
 {% endblock %}

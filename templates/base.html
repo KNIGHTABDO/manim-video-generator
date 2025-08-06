@@ -1,226 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Manim Video Generator{% endblock %}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}MathsGPT - AI Mathematical Animation Generator{% endblock
+      %}
+    </title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Prism.js for code highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #ec4899;
-            --secondary-dark: #db2777;
+      :root {
+        --neon-cyan: #00ffff;
+        --neon-purple: #ff00ff;
+        --neon-green: #00ff00;
+        --neon-pink: #ff0080;
+        --electric-blue: #0080ff;
+        --deep-space: #000000;
+        --void-black: #0a0a0a;
+        --stellar-gray: #1a1a1a;
+        --cosmic-blue: #0d1421;
+        --nebula-purple: #1a0d21;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: var(--deep-space);
+        min-height: 100vh;
+        color: #ffffff;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* Animated starfield background */
+      .starfield {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background: radial-gradient(
+          ellipse at center,
+          var(--cosmic-blue) 0%,
+          var(--deep-space) 70%
+        );
+      }
+
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 3s infinite;
+      }
+
+      .star:nth-child(odd) {
+        animation-delay: 1s;
+      }
+
+      .star:nth-child(even) {
+        animation-delay: 2s;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            min-height: 100vh;
-            color: #f3f4f6;
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
         }
+      }
 
-        .code-font {
-            font-family: 'JetBrains Mono', monospace;
+      /* Floating particles */
+      .particle {
+        position: absolute;
+        background: var(--neon-cyan);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+        box-shadow: 0 0 10px var(--neon-cyan);
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) translateX(0px) rotate(0deg);
+          opacity: 0;
         }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        10% {
+          opacity: 1;
         }
-
-        .gradient-border {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 1px;
-            border-radius: 0.5rem;
+        90% {
+          opacity: 1;
         }
-
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 0.5rem;
-            padding: 2px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-            mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
+        100% {
+          transform: translateY(-100px) translateX(100px) rotate(360deg);
+          opacity: 0;
         }
+      }
 
-        .gradient-button {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            transition: all 0.3s ease;
+      /* Neural network lines */
+      .neural-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.1;
+      }
+
+      .neural-line {
+        position: absolute;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--neon-cyan) 50%,
+          transparent 100%
+        );
+        animation: pulse-line 4s infinite;
+      }
+
+      @keyframes pulse-line {
+        0%,
+        100% {
+          opacity: 0.1;
         }
-
-        .gradient-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -10px var(--primary);
+        50% {
+          opacity: 0.8;
         }
+      }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      .code-font {
+        font-family: "Fira Code", monospace;
+      }
+
+      .title-font {
+        font-family: "Orbitron", monospace;
+      }
+
+      /* Neon text effects */
+      .neon-text {
+        color: var(--neon-cyan);
+        text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan),
+          0 0 15px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+        animation: neon-flicker 2s infinite alternate;
+      }
+
+      @keyframes neon-flicker {
+        0%,
+        100% {
+          text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan),
+            0 0 15px var(--neon-cyan), 0 0 20px var(--neon-cyan);
         }
-
-        .animate-pulse-glow {
-            animation: pulse-glow 2s infinite;
+        50% {
+          text-shadow: 0 0 2px var(--neon-cyan), 0 0 5px var(--neon-cyan),
+            0 0 8px var(--neon-cyan), 0 0 12px var(--neon-cyan);
         }
+      }
 
-        @keyframes pulse-glow {
-            0% {
-                box-shadow: 0 0 5px var(--primary),
-                    0 0 10px var(--primary),
-                    0 0 15px var(--primary);
-            }
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          var(--neon-cyan) 0%,
+          var(--neon-purple) 50%,
+          var(--neon-pink) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: gradient-shift 3s ease-in-out infinite;
+      }
 
-            50% {
-                box-shadow: 0 0 20px var(--primary),
-                    0 0 25px var(--primary),
-                    0 0 30px var(--primary);
-            }
-
-            100% {
-                box-shadow: 0 0 5px var(--primary),
-                    0 0 10px var(--primary),
-                    0 0 15px var(--primary);
-            }
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
         }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
+        50% {
+          background-position: 100% 50%;
         }
+      }
 
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
+      /* Glass morphism cards */
+      .glass-card {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glass-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 255, 255, 0.1),
+          transparent
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
         }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
+        100% {
+          left: 100%;
         }
+      }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.4);
+      /* Holographic buttons */
+      .holo-btn {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          var(--neon-cyan),
+          var(--electric-blue)
+        );
+        border: none;
+        color: var(--deep-space);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+          inset 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+
+      .holo-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: all 0.3s ease;
+      }
+
+      .holo-btn:hover::before {
+        left: 100%;
+      }
+
+      .holo-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6),
+          0 10px 20px rgba(0, 255, 255, 0.2);
+      }
+
+      /* Neon borders */
+      .neon-border {
+        border: 2px solid var(--neon-cyan);
+        box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+        animation: border-pulse 2s infinite;
+      }
+
+      @keyframes border-pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
         }
-
-        /* Loading spinner */
-        .loading-spinner {
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top: 3px solid var(--primary);
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
+        50% {
+          box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px var(--neon-cyan);
         }
+      }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+      /* Matrix-style background */
+      .matrix-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.1;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            rgba(0, 255, 255, 0.05) 25%,
+            rgba(0, 255, 255, 0.05) 26%,
+            transparent 27%,
+            transparent 74%,
+            rgba(0, 255, 255, 0.05) 75%,
+            rgba(0, 255, 255, 0.05) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            rgba(0, 255, 255, 0.05) 25%,
+            rgba(0, 255, 255, 0.05) 26%,
+            transparent 27%,
+            transparent 74%,
+            rgba(0, 255, 255, 0.05) 75%,
+            rgba(0, 255, 255, 0.05) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 50px 50px;
+        animation: matrix-move 10s linear infinite;
+      }
 
-            100% {
-                transform: rotate(360deg);
-            }
+      @keyframes matrix-move {
+        0% {
+          transform: translate(0, 0);
         }
+        100% {
+          transform: translate(50px, 50px);
+        }
+      }
+
+      /* Loading spinner */
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid transparent;
+        border-top: 3px solid var(--neon-cyan);
+        border-right: 3px solid var(--neon-purple);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        box-shadow: 0 0 20px var(--neon-cyan);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Pulsing dots */
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--neon-cyan);
+        border-radius: 50%;
+        animation: pulse-dot 1.5s infinite;
+        box-shadow: 0 0 10px var(--neon-cyan);
+      }
+
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.7;
+        }
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--void-black);
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          135deg,
+          var(--neon-cyan),
+          var(--electric-blue)
+        );
+        border-radius: 6px;
+        box-shadow: 0 0 10px var(--neon-cyan);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(
+          135deg,
+          var(--electric-blue),
+          var(--neon-purple)
+        );
+      }
+
+      /* Input field styling */
+      .futuristic-input {
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(0, 255, 255, 0.3);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .futuristic-input:focus {
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+          inset 0 0 20px rgba(0, 255, 255, 0.05);
+        outline: none;
+      }
+
+      .futuristic-input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Example button styling */
+      .example-btn {
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        color: var(--neon-cyan);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .example-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 255, 255, 0.1),
+          transparent
+        );
+        transition: all 0.3s ease;
+      }
+
+      .example-btn:hover::before {
+        left: 100%;
+      }
+
+      .example-btn:hover {
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      /* Terminal-like styling for code blocks */
+      .terminal {
+        background: var(--void-black);
+        border: 1px solid var(--neon-cyan);
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .terminal::before {
+        content: "● ● ●";
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        color: var(--neon-cyan);
+        font-size: 12px;
+      }
+
+      .terminal-header {
+        background: rgba(0, 255, 255, 0.1);
+        padding: 10px 50px 10px 15px;
+        border-bottom: 1px solid var(--neon-cyan);
+        color: var(--neon-cyan);
+        font-family: "Fira Code", monospace;
+        font-size: 12px;
+      }
+
+      /* Floating elements */
+      .float-animation {
+        animation: float-gentle 6s ease-in-out infinite;
+      }
+
+      @keyframes float-gentle {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Cyber grid background */
+      .cyber-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.1;
+        background-image: linear-gradient(
+            rgba(0, 255, 255, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        animation: grid-move 20s linear infinite;
+      }
+
+      @keyframes grid-move {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(20px, 20px);
+        }
+      }
+
+      /* Holographic video player */
+      .holo-video {
+        border: 2px solid var(--neon-cyan);
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+          inset 0 0 20px rgba(0, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .holo-video::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 30%,
+          rgba(0, 255, 255, 0.1) 50%,
+          transparent 70%
+        );
+        pointer-events: none;
+        animation: holo-sweep 3s infinite;
+      }
+
+      @keyframes holo-sweep {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body class="antialiased">
+  <body class="antialiased">
+    <!-- Starfield Background -->
+    <div class="starfield"></div>
+    <div class="matrix-bg"></div>
+    <div class="cyber-grid"></div>
+    <div class="neural-bg"></div>
+
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-opacity-90 backdrop-blur-lg bg-indigo-900 border-b border-indigo-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-3">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <span class="text-xl font-bold gradient-text">Manim Generator</span>
-                    </a>
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 glass-card border-0 border-b border-cyan-400"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center space-x-4">
+              <div class="relative">
+                <div
+                  class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center neon-border"
+                >
+                  <i class="fas fa-brain text-black text-xl"></i>
                 </div>
+                <div
+                  class="absolute -top-1 -right-1 w-4 h-4 bg-cyan-400 rounded-full pulse-dot"
+                ></div>
+              </div>
+              <div>
+                <span class="text-3xl font-bold title-font neon-text"
+                  >MathsGPT</span
+                >
+                <div class="text-xs text-cyan-400 uppercase tracking-widest">
+                  AI MATH ANIMATOR
+                </div>
+              </div>
+            </a>
+          </div>
 
-                <div class="flex items-center space-x-4">
-                    <a href="https://github.com/rohitg00/manim-video-generator" target="_blank" class="text-gray-300 hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                </div>
+          <div class="flex items-center space-x-6">
+            <div class="hidden md:flex items-center space-x-6">
+              <a
+                href="/chat"
+                class="text-cyan-400 hover:text-white transition-colors duration-300 font-medium"
+              >
+                <i class="fas fa-comments mr-2"></i>Chat
+              </a>
+              <a
+                href="#examples"
+                class="text-cyan-400 hover:text-white transition-colors duration-300 font-medium"
+              >
+                <i class="fas fa-play-circle mr-2"></i>Examples
+              </a>
+              <a
+                href="#about"
+                class="text-cyan-400 hover:text-white transition-colors duration-300 font-medium"
+              >
+                <i class="fas fa-info-circle mr-2"></i>About
+              </a>
             </div>
+            <a
+              href="https://github.com/rohitg00/manim-video-generator"
+              target="_blank"
+              class="text-cyan-400 hover:text-white transition-colors duration-300"
+            >
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-16">
-        {% block content %}{% endblock %}
-    </main>
+    <main class="pt-20">{% block content %}{% endblock %}</main>
 
     <!-- Footer -->
-    <footer class="mt-20 py-8 bg-indigo-900 bg-opacity-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Credits -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Credits</h3>
-                    <p class="text-gray-300">Created by <a href="https://github.com/rohitg00" class="text-indigo-400 hover:text-indigo-300">Rohit Ghumare</a></p>
-                    <p class="text-gray-300 mt-2">Powered by <a href="https://www.manim.community/" class="text-indigo-400 hover:text-indigo-300">Manim Community</a></p>
-                </div>
-
-                <!-- Links -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="https://docs.manim.community/" class="text-gray-300 hover:text-white">Manim Documentation</a></li>
-                        <li><a href="https://3b1b.github.io/manim/" class="text-gray-300 hover:text-white">3Blue1Brown's Manim</a></li>
-                        <li><a href="https://sevalla.com/" class="text-gray-300 hover:text-white">Sevalla</a></li>
-                    </ul>
-                </div>
-
-                <!-- Open Source -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Open Source</h3>
-                    <p class="text-gray-300">This project is open source under the MIT License.</p>
-                    <a href="https://github.com/rohitg00/manim-video-generator" class="inline-flex items-center mt-2 text-indigo-400 hover:text-indigo-300">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                        </svg>
-                        View on GitHub
-                    </a>
-                </div>
+    <footer class="mt-32 py-12 glass-card border-0 border-t border-cyan-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Brand -->
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center space-x-4 mb-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center neon-border"
+              >
+                <i class="fas fa-brain text-black text-lg"></i>
+              </div>
+              <span class="text-2xl font-bold title-font neon-text"
+                >MathsGPT</span
+              >
             </div>
-            <div class="mt-8 pt-8 border-t border-indigo-800 text-center text-gray-400">
-                <p> 2024 Manim Video Generator. Built with using Manim, Flask, and OpenAI.</p>
+            <p class="text-gray-300 mb-6 max-w-md">
+              Revolutionary AI-powered mathematical animation generator.
+              Transform complex mathematical concepts into stunning visual
+              animations with the power of artificial intelligence.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/rohitg00/manim-video-generator"
+                class="text-cyan-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-github text-2xl"></i>
+              </a>
+              <a
+                href="https://twitter.com/rohitg00"
+                class="text-cyan-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-twitter text-2xl"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/rohitg00"
+                class="text-cyan-400 hover:text-white transition-colors duration-300"
+              >
+                <i class="fab fa-linkedin text-2xl"></i>
+              </a>
             </div>
+          </div>
+
+          <!-- Technologies -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-cyan-400 title-font">
+              POWERED BY
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://www.manim.community/"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-cube mr-2"></i>Manim Community
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://openai.com/"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-robot mr-2"></i>OpenAI GPT
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://flask.palletsprojects.com/"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-flask mr-2"></i>Flask Framework
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://python.org/"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fab fa-python mr-2"></i>Python
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-cyan-400 title-font">
+              RESOURCES
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://docs.manim.community/"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-book mr-2"></i>Documentation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#examples"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-play-circle mr-2"></i>Examples
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://3b1b.github.io/manim/"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-video mr-2"></i>3Blue1Brown
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#tutorials"
+                  class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                >
+                  <i class="fas fa-graduation-cap mr-2"></i>Tutorials
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div class="mt-12 pt-8 border-t border-cyan-400 border-opacity-30">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-center md:text-left">
+              © 2024 MathsGPT. Revolutionizing mathematical education through
+              AI.
+            </p>
+            <div class="flex items-center space-x-2 mt-4 md:mt-0">
+              <span class="text-gray-400">Built with</span>
+              <i class="fas fa-heart text-red-500 animate-pulse"></i>
+              <span class="text-gray-400">by</span>
+              <a
+                href="https://github.com/rohitg00"
+                class="text-cyan-400 hover:text-white transition-colors duration-300 font-semibold"
+                >Rohit Ghumare</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
@@ -228,7 +811,105 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
-    {% block scripts %}{% endblock %}
-</body>
+    <!-- Background Animation Scripts -->
+    <script>
+      // Create starfield
+      function createStarfield() {
+        const starfield = document.querySelector(".starfield");
+        const numStars = 200;
 
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.style.left = Math.random() * 100 + "%";
+          star.style.top = Math.random() * 100 + "%";
+          star.style.width = Math.random() * 3 + 1 + "px";
+          star.style.height = star.style.width;
+          star.style.animationDelay = Math.random() * 3 + "s";
+          starfield.appendChild(star);
+        }
+      }
+
+      // Create floating particles
+      function createParticles() {
+        const numParticles = 15;
+
+        for (let i = 0; i < numParticles; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.width = Math.random() * 4 + 2 + "px";
+          particle.style.height = particle.style.width;
+          particle.style.animationDelay = Math.random() * 20 + "s";
+          particle.style.animationDuration = Math.random() * 10 + 15 + "s";
+          document.body.appendChild(particle);
+        }
+      }
+
+      // Create neural network lines
+      function createNeuralLines() {
+        const neuralBg = document.querySelector(".neural-bg");
+        const numLines = 10;
+
+        for (let i = 0; i < numLines; i++) {
+          const line = document.createElement("div");
+          line.className = "neural-line";
+          line.style.left = Math.random() * 100 + "%";
+          line.style.top = Math.random() * 100 + "%";
+          line.style.width = Math.random() * 200 + 100 + "px";
+          line.style.height = "1px";
+          line.style.transform = `rotate(${Math.random() * 360}deg)`;
+          line.style.animationDelay = Math.random() * 4 + "s";
+          neuralBg.appendChild(line);
+        }
+      }
+
+      // Initialize background animations
+      document.addEventListener("DOMContentLoaded", function () {
+        createStarfield();
+        createParticles();
+        createNeuralLines();
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add typing effect for the main title
+      function typeText(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = "";
+
+        function type() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          }
+        }
+
+        type();
+      }
+
+      // Initialize typing effects when page loads
+      window.addEventListener("load", function () {
+        const titleElement = document.querySelector(".typing-title");
+        if (titleElement) {
+          typeText(titleElement, titleElement.textContent);
+        }
+      });
+    </script>
+
+    {% block scripts %}{% endblock %}
+  </body>
 </html>

@@ -51,8 +51,8 @@ RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Install Python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements-full.txt .
+RUN pip install --no-cache-dir -r requirements-full.txt
 
 # Create necessary directories with correct permissions
 RUN mkdir -p /app/media/videos/scene/1080p30 \
@@ -69,11 +69,11 @@ USER appuser
 COPY --chown=appuser:appuser . .
 
 # Expose port
-EXPOSE 5001
+EXPOSE ${PORT:-5001}
 
 # Set environment variables for media paths
 ENV MEDIA_DIR=/app/media
 ENV TEMP_DIR=/app/tmp
 
 # Start Xvfb and Gunicorn
-CMD ["sh", "-c", "Xvfb :99 -screen 0 1280x720x24 -ac +extension GLX +render -noreset & gunicorn --bind 0.0.0.0:5001 --timeout 300 app:app"]
+CMD ["sh", "-c", "Xvfb :99 -screen 0 1280x720x24 -ac +extension GLX +render -noreset & gunicorn --bind 0.0.0.0:${PORT:-5001} --timeout 300 app:app"]

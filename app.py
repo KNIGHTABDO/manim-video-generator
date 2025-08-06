@@ -6,7 +6,6 @@ import logging
 import uuid
 import shutil
 import json
-from manim import *
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
@@ -14,6 +13,14 @@ from datetime import datetime
 import time
 import random
 import io
+
+# Conditional import for Manim (for environments that support it)
+try:
+    from manim import *
+    MANIM_AVAILABLE = True
+except ImportError:
+    MANIM_AVAILABLE = False
+    print("Manim not available - running in limited mode")
 
 # Load environment variables
 load_dotenv()
@@ -25,16 +32,17 @@ app = Flask(__name__,
 
 app.logger.setLevel(logging.INFO)
 
-# Configure Manim
-config.media_dir = "media"
-config.video_dir = "videos"
-config.images_dir = "images"
-config.text_dir = "texts"
-config.tex_dir = "tex"
-config.log_dir = "log"
-config.renderer = "cairo"
-config.text_renderer = "cairo"
-config.use_opengl_renderer = False
+# Configure Manim (only if available)
+if MANIM_AVAILABLE:
+    config.media_dir = "media"
+    config.video_dir = "videos"
+    config.images_dir = "images"
+    config.text_dir = "texts"
+    config.tex_dir = "tex"
+    config.log_dir = "log"
+    config.renderer = "cairo"
+    config.text_renderer = "cairo"
+    config.use_opengl_renderer = False
 
 # Set up required directories
 def setup_directories():
@@ -65,7 +73,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize Google GenAI client
-genai_client = genai.Client(api_key='AIzaSyAX1h0FQy88LagtmdrcVuxT6v9Lz8oyers')
+api_key = os.getenv('GOOGLE_API_KEY', 'AIzaSyAX1h0FQy88LagtmdrcVuxT6v9Lz8oyers')
+genai_client = genai.Client(api_key=api_key)
 
 # Set media and temporary directories with fallback to local paths
 if os.environ.get('DOCKER_ENV'):
@@ -2616,6 +2625,16 @@ def generate():
             return jsonify({'error': 'No concept provided'}), 400
             
         concept = sanitize_input(concept)
+        
+        # Check if Manim is available
+        if not MANIM_AVAILABLE:
+            # Return a message for environments where Manim isn't available (like Vercel)
+            return jsonify({
+                'success': False,
+                'error': 'Animation generation not available in this environment',
+                'message': 'This deployment does not support Manim animation generation. Please use the Docker version or local installation.',
+                'concept': concept
+            }), 503
         
         # Generate unique filename
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')

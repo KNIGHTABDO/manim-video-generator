@@ -2,8 +2,6 @@
 
 A web-based tool for generating mathematical animations using Manim, Flask, and AI. Create beautiful mathematical visualizations with simple text prompts and chat with an AI assistant about mathematics.
 
-
-
 ## 🌟 Features
 
 - Generate mathematical animations from text descriptions
@@ -15,7 +13,29 @@ A web-based tool for generating mathematical animations using Manim, Flask, and 
 - Docker support for easy deployment
 - Video generation directly in chat conversations
 
+## 🚀 Deployment Options
+
+### Option 1: Vercel (Frontend + API only)
+The Vercel deployment provides the web interface and AI chat functionality, but cannot generate Manim animations due to system dependency limitations.
+
+- ✅ Web interface
+- ✅ AI chat assistant
+- ❌ Animation generation
+
+### Option 2: Docker (Full functionality)
+Use Docker for complete Manim animation generation capabilities.
+
+### Option 3: Local Installation (Full functionality)
+Install all dependencies locally for development and full features.
+
 ## 🚀 Quick Start
+
+### Vercel Deployment
+1. Fork this repository
+2. Deploy to Vercel (uses `requirements.txt` - lightweight dependencies)
+3. Set environment variables in Vercel dashboard
+
+### Docker Deployment
 
 1. Clone the repository:
 ```bash

@@ -1,0 +1,17 @@
+Flask==3.0.0
+Werkzeug==3.0.1
+python-dotenv==1.0.0
+manim==0.18.0
+google-generativeai==0.8.0
+requests==2.31.0
+gunicorn==21.2.0
+numpy>=1.24.0
+scipy>=1.10.0
+Pillow>=10.0.0
+pycairo>=1.25.0
+ffmpeg-python>=0.2.0
+moderngl>=5.8.0
+moderngl-window>=2.4.4
+watchdog>=3.0.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0

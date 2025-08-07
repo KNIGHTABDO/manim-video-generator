@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory, url_for
+from flask_cors import CORS
 import os
 import tempfile
 import subprocess
@@ -6,6 +7,7 @@ import logging
 import uuid
 import shutil
 import json
+from manim import *
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
@@ -13,14 +15,13 @@ from datetime import datetime
 import time
 import random
 import io
-
-# Conditional import for Manim (for environments that support it)
-try:
-    from manim import *
-    MANIM_AVAILABLE = True
-except ImportError:
-    MANIM_AVAILABLE = False
-    print("Manim not available - running in limited mode")
+from telegram_bot import (
+    notify_generation_start, 
+    notify_generation_success, 
+    notify_generation_error,
+    notify_system_alert,
+    telegram_notifier
+)
 
 # Load environment variables
 load_dotenv()
@@ -30,19 +31,31 @@ app = Flask(__name__,
     static_url_path='/static',
     static_folder='static')
 
+# Enable CORS for all routes
+CORS(app)
+
+# Add ngrok-specific headers
+@app.after_request
+def after_request(response):
+    # Add headers for ngrok compatibility
+    response.headers['ngrok-skip-browser-warning'] = 'true'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, ngrok-skip-browser-warning'
+    return response
+
 app.logger.setLevel(logging.INFO)
 
-# Configure Manim (only if available)
-if MANIM_AVAILABLE:
-    config.media_dir = "media"
-    config.video_dir = "videos"
-    config.images_dir = "images"
-    config.text_dir = "texts"
-    config.tex_dir = "tex"
-    config.log_dir = "log"
-    config.renderer = "cairo"
-    config.text_renderer = "cairo"
-    config.use_opengl_renderer = False
+# Configure Manim
+config.media_dir = "media"
+config.video_dir = "videos"
+config.images_dir = "images"
+config.text_dir = "texts"
+config.tex_dir = "tex"
+config.log_dir = "log"
+config.renderer = "cairo"
+config.text_renderer = "cairo"
+config.use_opengl_renderer = False
 
 # Set up required directories
 def setup_directories():
@@ -73,8 +86,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize Google GenAI client
-api_key = os.getenv('GOOGLE_API_KEY', 'AIzaSyAX1h0FQy88LagtmdrcVuxT6v9Lz8oyers')
-genai_client = genai.Client(api_key=api_key)
+genai_client = genai.Client(api_key='AIzaSyAX1h0FQy88LagtmdrcVuxT6v9Lz8oyers')
 
 # Set media and temporary directories with fallback to local paths
 if os.environ.get('DOCKER_ENV'):
@@ -2053,11 +2065,11 @@ def generate_manim_code(concept):
             print(f"DEBUG: Generation attempt {attempt + 1}/3")
             
             response = genai_client.models.generate_content(
-                model='gemini-2.5-flash-lite',
+                model='gemini-2.5-flash-lite',  # Use 1.5-flash which doesn't have thinking mode
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     temperature=0.4 + (attempt * 0.1),
-                    max_output_tokens=8192,
+                    max_output_tokens=8192,  # Increase token limit
                 )
             )
         
@@ -2170,7 +2182,7 @@ def generate_manim_code(concept):
                 contents=enhanced_prompt,
                 config=types.GenerateContentConfig(
                     temperature=0.5,
-                    max_output_tokens=8192,
+                    max_output_tokens=8192,  # Increased for enhanced generation
                 )
             )
             
@@ -2619,6 +2631,9 @@ Keep your response comprehensive but not overwhelming - aim for 2-4 paragraphs u
 
 @app.route('/generate', methods=['POST'])
 def generate():
+    start_time = time.time()
+    user_ip = request.remote_addr
+    
     try:
         concept = request.json.get('concept', '')
         if not concept:
@@ -2626,15 +2641,8 @@ def generate():
             
         concept = sanitize_input(concept)
         
-        # Check if Manim is available
-        if not MANIM_AVAILABLE:
-            # Return a message for environments where Manim isn't available (like Vercel)
-            return jsonify({
-                'success': False,
-                'error': 'Animation generation not available in this environment',
-                'message': 'This deployment does not support Manim animation generation. Please use the Docker version or local installation.',
-                'concept': concept
-            }), 503
+        # Send start notification
+        notify_generation_start(concept, user_ip)
         
         # Generate unique filename
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -2654,10 +2662,13 @@ def generate():
         except Exception as code_gen_error:
             logger.error(f'Code generation error: {str(code_gen_error)}')
             print(f"DEBUG: Code generation failed with error: {code_gen_error}")
+            # Send error notification
+            notify_generation_error(concept, f"Code generation failed: {str(code_gen_error)}", user_ip)
             # Return error instead of basic visualization
             return jsonify({'error': f'AI code generation failed: {str(code_gen_error)}'}), 500
             
         if not manim_code:
+            notify_generation_error(concept, "Failed to generate code", user_ip)
             return jsonify({'error': 'Failed to generate code'}), 500
             
         # Write code to temporary file
@@ -2671,12 +2682,8 @@ def generate():
         
         # Run manim command with error handling
         output_file = os.path.join(app.static_folder, 'videos', f'{filename}.mp4')
-        
-        # Use appropriate Python command based on platform
-        python_cmd = 'py' if os.name == 'nt' else 'python3'
-        
         command = [
-            python_cmd, '-m', 'manim',
+            'py', '-m', 'manim',
             'render',
             '-qm',  # medium quality
             '--format', 'mp4',
@@ -2703,6 +2710,10 @@ def generate():
                 logger.error(f'Manim stderr: {result.stderr}')
                 logger.error(f'Manim stdout: {result.stdout}')
                 logger.error(f'Generated code that failed:\n{manim_code}')
+                
+                # Send error notification
+                notify_generation_error(concept, f"Manim rendering failed: {error_msg}", user_ip)
+                
                 return jsonify({
                     'error': 'Failed to generate animation',
                     'details': error_msg,
@@ -2718,15 +2729,26 @@ def generate():
             ]
             
             video_found = False
+            file_size = 0
             for source_path in possible_paths:
                 if os.path.exists(source_path):
                     shutil.move(source_path, output_file)
                     video_found = True
+                    # Get file size in MB
+                    file_size = os.path.getsize(output_file) / (1024 * 1024)
                     break
             
             if not video_found:
-                logger.error(f'Video not found in any of these locations: {possible_paths}')
+                error_msg = f'Video not found in any of these locations: {possible_paths}'
+                logger.error(error_msg)
+                notify_generation_error(concept, error_msg, user_ip)
                 return jsonify({'error': 'Generated video file not found'}), 500
+            
+            # Calculate generation time
+            duration = time.time() - start_time
+            
+            # Send success notification
+            notify_generation_success(concept, duration, file_size, user_ip)
             
             # Return success response
             return jsonify({
@@ -2736,6 +2758,8 @@ def generate():
             })
             
         except subprocess.TimeoutExpired:
+            error_msg = 'Animation generation timed out. The animation took too long to generate.'
+            notify_generation_error(concept, error_msg, user_ip)
             return jsonify({
                 'error': 'Animation generation timed out',
                 'details': 'The animation took too long to generate. Please try a simpler concept.'
@@ -2747,8 +2771,48 @@ def generate():
             
     except Exception as e:
         logger.error(f'Error generating animation: {str(e)}')
+        notify_generation_error(concept if 'concept' in locals() else 'Unknown', str(e), user_ip)
         return jsonify({
             'error': 'Internal server error',
+            'details': str(e)
+        }), 500
+
+@app.route('/telegram-status')
+def telegram_status():
+    """Check Telegram bot configuration status"""
+    return jsonify({
+        'configured': telegram_notifier.is_configured(),
+        'bot_token_exists': bool(telegram_notifier.bot_token),
+        'chat_id_exists': bool(telegram_notifier.chat_id),
+        'bot_instance_exists': bool(telegram_notifier.bot)
+    })
+
+@app.route('/test-telegram', methods=['POST'])
+def test_telegram():
+    """Test Telegram notification"""
+    try:
+        if not telegram_notifier.is_configured():
+            return jsonify({
+                'error': 'Telegram bot not configured. Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables.'
+            }), 400
+        
+        test_message = "🧪 Test notification from Manim Video Generator!\n\nIf you received this, notifications are working correctly! 🎉"
+        success = notify_system_alert('info', test_message)
+        
+        if success:
+            return jsonify({
+                'success': True,
+                'message': 'Test notification sent successfully!'
+            })
+        else:
+            return jsonify({
+                'error': 'Failed to send test notification. Check bot token and chat ID.'
+            }), 500
+            
+    except Exception as e:
+        logger.error(f'Error testing Telegram: {str(e)}')
+        return jsonify({
+            'error': 'Error testing Telegram notification',
             'details': str(e)
         }), 500
 
@@ -2760,9 +2824,7 @@ def update_docs():
         script_path = os.path.join(app.root_path, 'scrape_manim_docs.py')
         
         if os.path.exists(script_path):
-            # Use appropriate Python command based on platform
-            python_cmd = 'py' if os.name == 'nt' else 'python3'
-            result = subprocess.run([python_cmd, script_path], 
+            result = subprocess.run(['py', script_path], 
                                   capture_output=True, text=True, cwd=app.root_path)
             
             if result.returncode == 0:
@@ -2806,6 +2868,10 @@ def serve_video(filename):
 
 
 if __name__ == '__main__':
+    # Send startup notification
+    startup_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    notify_system_alert('info', f'Manim Video Generator started successfully at {startup_time}')
+    
     port = int(os.environ.get('PORT', 5001))
     debug = os.environ.get('FLASK_ENV') != 'production'
     app.run(host='0.0.0.0', port=port, debug=debug)

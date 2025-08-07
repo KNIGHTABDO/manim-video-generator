@@ -9,8 +9,11 @@ services:
       - key: PYTHONUNBUFFERED
         value: "1"
       - key: GOOGLE_API_KEY
-        sync: false
+        fromService:
+          type: pserv
+          name: manim-video-generator
+          envVarKey: GOOGLE_API_KEY
     disk:
       name: manim-data
       mountPath: /app/media
-      sizeGB: 2
+      sizeGB: 1

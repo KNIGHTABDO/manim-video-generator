@@ -1,0 +1,25 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "A web-based tool for generating mathematical animations using Manim, Flask, and AI. Create beautiful mathematical visualizations with simple text prompts and chat with an AI assistant about mathematics.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KNIGHTABDO/manim-video-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KNIGHTABDO/manim-video-generator/issues"
+  },
+  "homepage": "https://github.com/KNIGHTABDO/manim-video-generator#readme",
+  "dependencies": {
+    "fastify": "^5.4.0",
+    "fastify-cors": "^6.0.3",
+    "fastify-static": "^4.6.1"
+  }
+}
